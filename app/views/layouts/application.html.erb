@@ -10,15 +10,22 @@
 
 <body>
   <div id="container">
-    <div id="user_nav">
-      <% if current_user %>
-        Welcome <%= current_user.name %>
-        <%= link_to "Sign out", signout_path  %>
-      <% else %>
-        <%= link_to "Sign in with Twitter", "/auth/twitter" %>
-      <% end %>
-    </div>
+    <div id="top_bar_outer">
+      <div id="top_bar_inner">
+        <div id="user_nav">
+          <% if current_user %>
+            Welcome <%= current_user.name %>
+            <%= link_to "Sign out", signout_path  %>
+          <% else %>
+            <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+          <% end %>
+        </div> <!-- user_nav -->
+      </div> <!-- top_bar_inner -->
+    </div> <!-- top_bar_outer -->
+
+    <div id="main">
     <%= yield %>
-  </div>
+    </div> <!-- main -->
+  </div> <!-- container -->
 </body>
 </html>
