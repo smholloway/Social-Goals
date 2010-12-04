@@ -1,4 +1,8 @@
 AchieveAnything::Application.routes.draw do
+  get "goals/index"
+
+  get "achievements/index"
+
   get "home/index"
 
   root :to => "home#index"
