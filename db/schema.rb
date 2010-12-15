@@ -10,7 +10,55 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101129025113) do
+ActiveRecord::Schema.define(:version => 20101214224750) do
+
+  create_table "achievement_types", :force => true do |t|
+    t.string   "name",                          :null => false
+    t.text     "description"
+    t.string   "icon_url"
+    t.boolean  "visible",     :default => true, :null => false
+    t.boolean  "active",      :default => true, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "achievements", :force => true do |t|
+    t.boolean  "public",     :default => true, :null => false
+    t.integer  "user_id"
+    t.integer  "level_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "goals", :force => true do |t|
+    t.string   "name",                           :null => false
+    t.text     "description"
+    t.boolean  "public",      :default => false, :null => false
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "levels", :force => true do |t|
+    t.string   "name",                                  :null => false
+    t.text     "description"
+    t.integer  "point_value",         :default => 0,    :null => false
+    t.boolean  "visible",             :default => true, :null => false
+    t.integer  "achievement_type_id",                   :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tasks", :force => true do |t|
+    t.string   "name",                            :null => false
+    t.text     "description"
+    t.date     "deadline"
+    t.integer  "percent_complete", :default => 0, :null => false
+    t.integer  "goal_id",                         :null => false
+    t.integer  "parent_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "provider"

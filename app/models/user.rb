@@ -6,4 +6,8 @@ class User < ActiveRecord::Base
       user.name = auth["user_info"]["name"]
     end
   end
+  
+  has_many :goals
+  has_many :tasks, :through => :goals
+  has_many :achievements
 end
