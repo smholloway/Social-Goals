@@ -70,13 +70,15 @@ body {
 	-webkit-font-smoothing: antialiased;
 	text-shadow: rgba(0, 0, 0, 0.246094) -1px -1px 0px;
 	-webkit-box-shadow: rgba(0, 0, 0, 0.296875) 0px 1px 4px;
+	-moz-box-shadow: rgba(0, 0, 0, 0.296875) 0px 1px 4px;	
+	box-shadow: rgba(0, 0, 0, 0.296875) 0px 1px 4px;
 }
 
 #main {
   margin: 1em auto;
   position: relative;
   padding: 0px 5px;
-  min-width: 800px;
+  min-width: 871px;
   margin: 0 10px;
 	border: 0px solid black;
   border-radius: 5px;
@@ -119,6 +121,8 @@ ul.link_menu li {
   webkit-border-radius: 3px;
   moz-border-radius: 3px;
 	-webkit-box-shadow: rgba(0, 0, 0, 0.296875) 0px 1px 4px;
+	-moz-box-shadow: rgba(0, 0, 0, 0.296875) 0px 1px 4px;
+	box-shadow: rgba(0, 0, 0, 0.296875) 0px 1px 4px;		
 	-webkit-font-smoothing: antialiased;
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4183C4), to(#286DA3));
 	text-shadow: rgba(0, 0, 0, 0.246094) -1px -1px 0px;
