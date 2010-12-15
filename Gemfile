@@ -7,6 +7,7 @@ gem 'rails', '3.0.1'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'omniauth'
+gem 'devise', '1.1.2'
 
 # Deploy with Capistrano
 # gem 'capistrano'

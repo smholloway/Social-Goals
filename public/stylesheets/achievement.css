@@ -1,17 +1,25 @@
 #achievements {
   width: 871px;
 }
+#achievements h1 {
+	font-size: 20px;
+	text-align: center;
+	padding: 2px;
+}
 .achievements_list {
   float: left;
   width: 174px;
-  background: #95CBE9;
-  border: 1px solid #EFD279;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#DDD), to(#888));
+  background: #DDD;
+  border: 0px solid #FFF;
   -webkit-border-top-left-radius: 5px;
   -webkit-border-bottom-left-radius: 5px;
   -moz-border-radius-topleft: 5px;
   -moz-border-radius-bottomleft: 5px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+  text-shadow: rgba(0, 0, 0, 0.246094) -1px -1px 0px;
+	-webkit-font-smoothing: antialiased;
 }
 .achievements_body {
   float: left;
@@ -26,13 +34,15 @@
 .achievement {
   margin-bottom: 1px;
   padding: 10px;
-  border: 1px solid #EFD279;
-  background: #AFD775;
+  border: 1px solid #286DA3;
   text-align: center;
   position: relative;
   height: 82px;
   font-size: 13px;
   font-family: Georgia;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.296875) 0px 1px 4px;
+	-webkit-font-smoothing: antialiased;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4183C4), to(#286DA3));
 }
 .achievement-icon {
   position: absolute;

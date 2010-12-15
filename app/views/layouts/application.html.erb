@@ -10,31 +10,52 @@
 </head>
 
 <body>
-  <div id="container">
-    <div id="top_bar_outer">
-      <div id="top_bar_inner">
-        <div id="user_nav">
-          <% if current_user %>
-            Welcome <%= current_user.name %>
-            <%= link_to "Sign out", signout_path  %>
-          <% else %>
-            <%= link_to "Sign in with Twitter", "/auth/twitter" %>
-          <% end %>
-        </div> <!-- user_nav -->
-      </div> <!-- top_bar_inner -->
-    </div> <!-- top_bar_outer -->
+  <div id="page">
+    <div id="top_bar">
+			<div id="top_bar_logo">
+				Whichado
+			</div> <!-- top_bar_logo -->
+			<div id="top_bar_links">
+				<div id="top_bar_home" class="link_button">
+					<%= link_to 'Home', root_path %>
+				</div> <!-- top_bar_home -->
+				<div id="top_bar_goals" class="link_button">
+					<%= link_to 'My Goals', goals_index_path %>
+				</div> <!-- top_bar_goals -->
+				<div id="top_bar_achievements" class="link_button">
+					<%= link_to "My Achievements", achievements_index_path %>
+				</div> <!-- top_bar_achievements -->
+	      <div id="top_bar_login" class="link_button">
+	        <% if current_user %>
+	          Welcome <%= current_user.name %>
+	          <%= link_to "Sign out", signout_path  %>
+	        <% else %>
+	          <%= link_to "Log in", "/auth/twitter" %>
+	        <% end %>
+	      </div> <!-- top_bar_login -->
+	    </div> <!-- top_bar_links -->
+    	<div style="clear:both"> <br/> </div>
+    </div> <!-- top_bar -->
+
+		<div id="banner">
+			10,000+ people are using Whichado to achieve anything
+		</div> <!-- banner -->
 
     <div id="main">
-      <div id="main_top">
-        <ul>
-          <li><%= link_to 'Home', root_path %></li>
-          <li><%= link_to 'My Goals', goals_index_path %></li>
-          <li><%= link_to "My Achievements", achievements_index_path %></li>
-        </ul>
+      <div id="main_top" style="display:none">
+        <ul class="link_menu">
+          <li class="link_button"><%= link_to 'Home', root_path %></li>
+          <li class="link_button"><%= link_to 'My Goals', goals_index_path %></li>
+          <li class="link_button"><%= link_to "My Achievements", achievements_index_path %></li>
+        </ul> <!-- link_menu -->
+      	<div style="clear:both"><br/></div>
       </div> <!-- main_top -->
+
+      <div id="content">
         <%= yield %>
+      </div> <!-- content -->
     </div> <!-- main -->
     <div style="clear:both"><br/></div>
-  </div> <!-- container -->
+  </div> <!-- page -->
 </body>
 </html>
