@@ -24,7 +24,7 @@ body {
   height: 50px;
   line-height: 50px;
   font-size: 14px;
-  border-bottom: 1px groove white;
+  border-bottom: 1px groove #AAA;
   padding: 0px 5px;
   z-index: 999;
 }
@@ -137,4 +137,9 @@ li.link_button a {
 }
 li.link_button a:hover {
 	background: #4183C4;
+}
+
+#home {
+	width: 871px;
+	margin: auto;
 }
