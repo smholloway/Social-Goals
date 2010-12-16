@@ -24,22 +24,19 @@
 				</div> <!-- top_bar_goals -->
 				<div id="top_bar_achievements" class="link_button">
 					<%= link_to "My Achievements", achievements_index_path %>
-				</div> <!-- top_bar_achievements -->
-	      <div id="top_bar_login" class="link_button">
-	        <% if current_user %>
-	          Welcome <%= current_user.name %>
-	          <%= link_to "Sign out", signout_path  %>
-	        <% else %>
-	          <%= link_to "Log in", "/auth/twitter" %>
-	        <% end %>
-	      </div> <!-- top_bar_login -->
+				</div> <!-- top_bar_achievements -->			
 	    </div> <!-- top_bar_links -->
     	<div style="clear:both"> <br/> </div>
     </div> <!-- top_bar -->
 
 		<div id="banner">
-			10,000+ people are using Whichado to achieve anything
+			10,000+ people are using Whichado to achieve anything<strong>*</strong>
 		</div> <!-- banner -->
+
+		<div id="responses_to_user_actions">
+			<p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
 
     <div id="main">
       <div id="main_top" style="display:none">
@@ -56,6 +53,32 @@
       </div> <!-- content -->
     </div> <!-- main -->
     <div style="clear:both"><br/></div>
+
+		<hr/>
+		<div id="footer">
+			<strong>*</strong>Not really, but our moms really like it!
+		</div> <!-- footer -->
+
+		<div id="user_signin" style="display:all">
+			User:
+			<% if user_signed_in? %>
+		  	Signed in as <%= current_user.email %>. Not you?
+		    <%= link_to "Sign out", destroy_user_session_path %>
+		  <% else %>
+		    <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+			<% end %>
+  	</div> <!-- user_signin -->
+
+		<div id="admin_signin" style="display:none">
+			Admin:
+			<% if admin_signed_in? %>
+		  	Signed in as <%= current_admin.email %>. Not you?
+		    <%= link_to "Sign out", destroy_admin_session_path %>
+		  <% else %>
+		    <%= link_to "Sign up", new_admin_registration_path %> or <%= link_to "sign in", new_admin_session_path %>
+			<% end %>
+		</div> <!-- admin_signin -->
+
   </div> <!-- page -->
 </body>
 </html>

@@ -31,6 +31,7 @@ body {
 #top_bar_logo {
 	float: left;
 	margin-left: 5px;
+	min-width: 50px;
 	font-size: 28px;
 	line-height: 50px;
 	font-variant: small-caps;
@@ -39,7 +40,7 @@ body {
 }
 #top_bar_links {
 	float: right;
-	min-width: 200px;
+	min-width: 300px;
 	text-align: center;
 }
 .link_button {
@@ -74,6 +75,22 @@ body {
 	box-shadow: rgba(0, 0, 0, 0.296875) 0px 1px 4px;
 }
 
+#responses_to_user_actions {
+	padding: 10px;
+	height: 25px;
+	line-height: 25px;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#AAA), to(#FFF));
+	-webkit-font-smoothing: antialiased;
+	text-shadow: rgba(0, 0, 0, 0.246094) -1px -1px 0px;
+	text-align: center;
+}
+#responses_to_user_actions .notice {
+	color: green;
+}
+#responses_to_user_actions.alert {
+	color: red;
+}
+
 #main {
   margin: 1em auto;
   position: relative;
@@ -102,6 +119,9 @@ body {
   font-size: 13px;
 }
 
+#footer {
+	padding: 8px;
+}
 
 ul.link_menu {
   list-style-type:none; 
@@ -117,9 +137,9 @@ ul.link_menu li {
   float: left;
   width: 150px;
   border: 1px solid #286DA3;
-  border-radius: 3px;
   webkit-border-radius: 3px;
   moz-border-radius: 3px;
+  border-radius: 3px;
 	-webkit-box-shadow: rgba(0, 0, 0, 0.296875) 0px 1px 4px;
 	-moz-box-shadow: rgba(0, 0, 0, 0.296875) 0px 1px 4px;
 	box-shadow: rgba(0, 0, 0, 0.296875) 0px 1px 4px;		
@@ -142,4 +162,9 @@ li.link_button a:hover {
 #home {
 	width: 871px;
 	margin: auto;
+}
+
+strong {
+	font-variant: small-caps;
+	text-decoration: italic;
 }

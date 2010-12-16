@@ -1,4 +1,8 @@
 AchieveAnything::Application.routes.draw do
+  devise_for :users
+
+  devise_for :admins
+
   get "goals/index"
 
   get "achievements/index"
@@ -6,10 +10,6 @@ AchieveAnything::Application.routes.draw do
   get "home/index"
 
   root :to => "home#index"
-
-  match "/auth/twitter/callback" => "sessions#create"
-  match "/signout" => "sessions#destroy", :as => :signout
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

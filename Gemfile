@@ -7,7 +7,9 @@ gem 'rails', '3.0.1'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'omniauth'
+gem 'oauth2'
 gem 'devise', '1.1.2'
+gem 'will_paginate', "~> 3.0.pre2"
 
 # Deploy with Capistrano
 # gem 'capistrano'
