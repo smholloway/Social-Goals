@@ -5,7 +5,7 @@ class CreateLevels < ActiveRecord::Migration
       t.text :description # optional
       t.integer :point_value, :null => false, :default => 0
       t.boolean :visible, :null => false, :default => true # admin only
-      t.integer :achievement_type_id, :null => false # foreign key for parent achievement
+      t.integer :achievement_type_id, :null => false, :default => 0 # foreign key for parent achievement
       
       t.timestamps
     end

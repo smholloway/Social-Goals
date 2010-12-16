@@ -1,8 +1,7 @@
 class Goal < ActiveRecord::Base
-  #attr_accessor :name, :description, :public
-  
-  validates_presence_of :name
-  
   belongs_to :user
   has_many :tasks
+  
+  validates_presence_of :name, :user_id
+  validates_associated :user
 end

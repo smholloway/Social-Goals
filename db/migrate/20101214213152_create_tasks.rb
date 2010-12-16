@@ -5,7 +5,7 @@ class CreateTasks < ActiveRecord::Migration
       t.text :description # optional
       t.date :deadline # optional
       t.integer :percent_complete, :null => false, :default => 0
-      t.integer :goal_id, :null => false # foreign key for parent goal
+      t.integer :goal_id, :null => false, :default => 0 # foreign key for parent goal
       t.integer :parent_id # foreign key for circular references for nested tasks (can be null!)
 
       t.timestamps
