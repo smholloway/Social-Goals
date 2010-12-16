@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(:version => 20101214224750) do
 
   create_table "achievements", :force => true do |t|
     t.boolean  "public",     :default => true, :null => false
-    t.integer  "user_id"
-    t.integer  "level_id"
+    t.integer  "user_id",    :default => 0,    :null => false
+    t.integer  "level_id",   :default => 0,    :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(:version => 20101214224750) do
     t.string   "name",                           :null => false
     t.text     "description"
     t.boolean  "public",      :default => false, :null => false
-    t.integer  "user_id"
+    t.integer  "user_id",     :default => 0,     :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(:version => 20101214224750) do
     t.text     "description"
     t.integer  "point_value",         :default => 0,    :null => false
     t.boolean  "visible",             :default => true, :null => false
-    t.integer  "achievement_type_id",                   :null => false
+    t.integer  "achievement_type_id", :default => 0,    :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(:version => 20101214224750) do
     t.text     "description"
     t.date     "deadline"
     t.integer  "percent_complete", :default => 0, :null => false
-    t.integer  "goal_id",                         :null => false
+    t.integer  "goal_id",          :default => 0, :null => false
     t.integer  "parent_id"
     t.datetime "created_at"
     t.datetime "updated_at"
