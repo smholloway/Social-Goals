@@ -1,4 +1,18 @@
 AchieveAnything::Application.routes.draw do
+  resources :levels
+  
+  resources :achievement_types do
+    resource :levels
+  end
+  
+  resources :achievements
+
+  resources :tasks
+
+  resources :goals do
+    resource :tasks
+  end
+
   devise_for :users
 
   devise_for :admins

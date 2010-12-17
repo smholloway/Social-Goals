@@ -7,6 +7,8 @@ class CreateAchievements < ActiveRecord::Migration
       
       t.timestamps
     end
+    add_index :achievements, :user_id
+    add_index :achievements, :level_id
   end
 
   def self.down

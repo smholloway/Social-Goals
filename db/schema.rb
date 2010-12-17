@@ -30,6 +30,9 @@ ActiveRecord::Schema.define(:version => 20101216205351) do
     t.datetime "updated_at"
   end
 
+  add_index "achievements", ["level_id"], :name => "index_achievements_on_level_id"
+  add_index "achievements", ["user_id"], :name => "index_achievements_on_user_id"
+
   create_table "admins", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
     t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
@@ -58,6 +61,8 @@ ActiveRecord::Schema.define(:version => 20101216205351) do
     t.datetime "updated_at"
   end
 
+  add_index "goals", ["user_id"], :name => "index_goals_on_user_id"
+
   create_table "levels", :force => true do |t|
     t.string   "name",                                  :null => false
     t.text     "description"
@@ -68,16 +73,22 @@ ActiveRecord::Schema.define(:version => 20101216205351) do
     t.datetime "updated_at"
   end
 
+  add_index "levels", ["achievement_type_id"], :name => "index_levels_on_achievement_type_id"
+
   create_table "tasks", :force => true do |t|
     t.string   "name",                            :null => false
     t.text     "description"
     t.date     "deadline"
     t.integer  "percent_complete", :default => 0, :null => false
+    t.integer  "user_id",          :default => 0, :null => false
     t.integer  "goal_id",          :default => 0, :null => false
     t.integer  "parent_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "tasks", ["goal_id"], :name => "index_tasks_on_goal_id"
+  add_index "tasks", ["user_id"], :name => "index_tasks_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
