@@ -1,46 +1,26 @@
 <div id="achievements">
-  <h1>Achievements</h1>
-  <div class="achievements_list">
-    <div class="achievement_list" id="achievement_list_general">General</div>
-    <div class="achievement_list" id="achievement_list_programming">Programming</div>
-  </div> <!-- achievements_list -->
+	<h1>Listing achievements</h1>
 
-  <div class="achievements_body">
-    <div class="achievement" id="ach1" onclick="Achieve.Achievements.select(this,true)">
-      <div class="achievement-icon"><img class="p" src="/images/fst_iconframe.png"></div>
-      <div class="achievement-title">Title</div>
-      <div class="achievement-description">Description</div>
-      <div class="achievement-points"><div>10</div></div>
-      <div class="achievement-date">December 2, 2010</div>
-      <br clear="all">
-    </div> <!-- ach1 -->
+	<table>
+	  <tr>
+		<th>Achievement Type</th>
+		<th>Level</th>
+	    <th>Public</th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	  </tr>
 
-    <div class="achievement" id="ach2" onclick="Achieve.Achievements.select(this,true)">
-      <div class="achievement-icon"><img class="p" src="/images/fst_iconframe.png"></div>
-      <div class="achievement-title">Title</div>
-      <div class="achievement-description">Description</div>
-      <div class="achievement-points"><div>10</div></div>
-      <div class="achievement-date">December 2, 2010</div>
-      <br clear="all">
-    </div> <!-- ach2 -->
-
-    <div class="achievement" id="ach3" onclick="Achieve.Achievements.select(this,true)">
-      <div class="achievement-icon"><img class="p" src="/images/fst_iconframe.png"></div>
-      <div class="achievement-title">Title</div>
-      <div class="achievement-description">Description</div>
-      <div class="achievement-points"><div>10</div></div>
-      <div class="achievement-date">December 2, 2010</div>
-      <br clear="all">
-    </div> <!-- ach3 -->
-
-    <div class="achievement" id="ach4" onclick="Achieve.Achievements.select(this,true)">
-      <div class="achievement-icon"><img class="p" src="/images/fst_iconframe.png"></div>
-      <div class="achievement-title">Title</div>
-      <div class="achievement-description">Description</div>
-      <div class="achievement-points"><div>10</div></div>
-      <div class="achievement-date">December 2, 2010</div>
-      <br clear="all">
-    </div> <!-- ach4 -->
-
-  </div> <!-- achievements_body -->
+		<% @achievements.each do |achievement| %>
+		  <tr>
+			<td><%= achievement.level.achievement_type.name %></td>
+			<td><%= achievement.level.name %></td>
+		    <td><%= achievement.public %></td>
+		    <td><%= link_to 'Show', achievement %></td>
+		    <td><%= link_to 'Edit', edit_achievement_path(achievement) %></td>
+		    <td><%= link_to 'Destroy', achievement, :confirm => 'Are you sure?', :method => :delete %></td>
+		  </tr>
+		<% end %>
+	</table>
 </div> <!-- achievements -->
+

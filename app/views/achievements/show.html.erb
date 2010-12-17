@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Achievement Type</b>
+  <%= @achievement.level.achievement_type.name %><br>
+  <b>Level</b>
+  <%= @achievement.level.name %><br>
+  <b>Public:</b>
+  <%= @achievement.public %>
+</p>
+
+
+<%= link_to 'Edit', edit_achievement_path(@achievement) %> |
+<%= link_to 'Back', achievements_path %>
+
+<br class="clear:both"/>
+<div id="achievements_body">
+  <div class="achievement" id="ach2" onclick="Achieve.Achievements.select(this,true)">
+    <div class="achievement-icon"><img class="p" src="/images/fst_iconframe.png"></div>
+    <div class="achievement-title">Title</div>
+    <div class="achievement-description">Description</div>
+    <div class="achievement-points"><div>10</div></div>
+    <div class="achievement-date">December 2, 2010</div>
+    <br clear="all">
+  </div> <!-- ach2 -->
+
+  <div class="achievement" id="ach3" onclick="Achieve.Achievements.select(this,true)">
+    <div class="achievement-icon"><img class="p" src="/images/fst_iconframe.png"></div>
+    <div class="achievement-title">Title</div>
+    <div class="achievement-description">Description</div>
+    <div class="achievement-points"><div>10</div></div>
+    <div class="achievement-date">December 2, 2010</div>
+    <br clear="all">
+  </div> <!-- ach3 -->
+
+  <div class="achievement" id="ach4" onclick="Achieve.Achievements.select(this,true)">
+    <div class="achievement-icon"><img class="p" src="/images/fst_iconframe.png"></div>
+    <div class="achievement-title">Title</div>
+    <div class="achievement-description">Description</div>
+    <div class="achievement-points"><div>10</div></div>
+    <div class="achievement-date">December 2, 2010</div>
+    <br clear="all">
+  </div> <!-- ach4 -->
+
+</div> <!-- achievements_body -->

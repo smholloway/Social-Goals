@@ -8,6 +8,6 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   
   has_many :goals
-  has_many :tasks, :through => :goals
+  has_many :tasks
   has_many :achievements
 end

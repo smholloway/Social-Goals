@@ -1,0 +1,31 @@
+<h1>Listing achievement_types</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Icon url</th>
+    <th>Visible</th>
+    <th>Active</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @achievement_types.each do |achievement_type| %>
+  <tr>
+    <td><%= achievement_type.name %></td>
+    <td><%= achievement_type.description %></td>
+    <td><%= achievement_type.icon_url %></td>
+    <td><%= achievement_type.visible %></td>
+    <td><%= achievement_type.active %></td>
+    <td><%= link_to 'Show', achievement_type %></td>
+    <td><%= link_to 'Edit', edit_achievement_type_path(achievement_type) %></td>
+    <td><%= link_to 'Destroy', achievement_type, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Achievement type', new_achievement_type_path %>

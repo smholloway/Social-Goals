@@ -2,6 +2,19 @@ AchieveAnything::Application.routes.draw do
   get "home/login"
 
   # get "user/show"
+  resources :levels
+  
+  resources :achievement_types do
+    resource :levels
+  end
+  
+  resources :achievements
+
+  resources :tasks
+
+  resources :goals do
+    resource :tasks
+  end
 
   devise_for :users
 

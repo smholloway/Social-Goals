@@ -1,23 +1,27 @@
-<div id="goals">
-	<h1>Get started</h1>
-	<p>Input a goal and we'll begin your quest</p>
+<h1>These are your goals</h1>
 
-	<ul>
-	  <li>Put your goals in writing.
-	  <li>Make a list of obstacles.
-	  <li>Think of everything that might stand in your way. 
-	  <li>List the benefits of achieving your goal.
-	  <li>Identify subgoals.
-	  <li>Learn what you need to learn.
-	  <li>Enlist the help of others.
-	  <li>Visualize yourself having achieved each of your goals.
-	  <li>Get organized.
-	  <li>Reward yourself each step of the way.
-	</ul>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Public</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
 
-	<div>
-	<%= render 'test' %>
-	</div>
+<% @goals.each do |goal| %>
+  <tr>
+    <td><%= goal.name %></td>
+    <td><%= goal.description %></td>
+    <td><%= goal.public %></td>
+    <td><%= link_to 'Show', goal %></td>
+    <td><%= link_to 'Edit', edit_goal_path(goal) %></td>
+    <td><%= link_to 'Destroy', goal, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
 
-	<p style="display:none"><a href="http://www.psychologytoday.com/articles/200307/the-goals-guide-us">The Goals That Guide Us</a></p>
-</div> <!-- goals -->
+<br />
+
+<%= link_to 'New Goal', new_goal_path %>

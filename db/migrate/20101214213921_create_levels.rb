@@ -9,6 +9,7 @@ class CreateLevels < ActiveRecord::Migration
       
       t.timestamps
     end
+    add_index :levels, :achievement_type_id
   end
 
   def self.down
