@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Achievement Type</b>
+  <%= @achievement.level.achievement_type.name %><br>
+  <b>Level</b>
+  <%= @achievement.level.name %><br>
+  <b>Public:</b>
+  <%= @achievement.public %>
+</p>
+
+
+<%= link_to 'Edit', edit_achievement_path(@achievement) %> |
+<%= link_to 'Back', achievements_path %>

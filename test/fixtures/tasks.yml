@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  description: MyText
+  deadline: 2010-12-16
+  percent_complete: 1
+
+two:
+  name: MyString
+  description: MyText
+  deadline: 2010-12-16
+  percent_complete: 1

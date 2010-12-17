@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @goal.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @goal.description %>
+</p>
+
+<p>
+  <b>Public:</b>
+  <%= @goal.public %>
+</p>
+
+<hr>
+<b>Tasks:</b>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Deadline</th>
+    <th>Percent complete</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @goal.tasks.each do |task| %>
+  <tr>
+    <td><%= task.name %></td>
+    <td><%= task.description %></td>
+    <td><%= task.deadline %></td>
+    <td><%= task.percent_complete %></td>
+    <td><%= link_to 'Show', task %></td>
+    <td><%= link_to 'Edit', edit_task_path(task) %></td>
+    <td><%= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<hr>
+<b>Add Task</b>
+<%= render 'tasks/form' %>
+
+<%= link_to 'Edit', edit_goal_path(@goal) %> |
+<%= link_to 'Back', goals_path %>

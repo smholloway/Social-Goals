@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  description: MyText
+  point_value: 1
+  visible: false
+
+two:
+  name: MyString
+  description: MyText
+  point_value: 1
+  visible: false

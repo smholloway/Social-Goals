@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @achievement_type.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @achievement_type.description %>
+</p>
+
+<p>
+  <b>Icon url:</b>
+  <%= @achievement_type.icon_url %>
+</p>
+
+<p>
+  <b>Visible:</b>
+  <%= @achievement_type.visible %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @achievement_type.active %>
+</p>
+
+<hr>
+<b>levels:</b>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Point value</th>
+    <th>Visible</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @achievement_type.levels.each do |level| %>
+  <tr>
+    <td><%= level.name %></td>
+    <td><%= level.description %></td>
+    <td><%= level.point_value %></td>
+    <td><%= level.visible %></td>
+    <td><%= link_to 'Show', level %></td>
+    <td><%= link_to 'Edit', edit_level_path(level.id) %></td>
+    <td><%= link_to 'Destroy', level, :confirm => 'Are you sure?', :method => :delete, :id => level.id %></td>
+	<td><%= link_to 'Claim', achievements_path(:id => level.id), :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<hr>
+<b>Add Level</b>
+<%= render 'levels/form' %>
+
+<%= link_to 'Edit', edit_achievement_type_path(@achievement_type) %> |
+<%= link_to 'Back', achievement_types_path %>
