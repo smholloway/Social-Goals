@@ -1,4 +1,8 @@
 AchieveAnything::Application.routes.draw do
+  get "home/login"
+
+  # get "user/show"
+
   devise_for :users
 
   devise_for :admins
@@ -6,6 +10,8 @@ AchieveAnything::Application.routes.draw do
   get "goals/index"
 
   get "achievements/index"
+
+  resources :users
 
   get "home/index"
 
