@@ -26,7 +26,7 @@ body {
   display: block;
   height: 70px;
   line-height: 50px;
-  font-size: 14px;
+  font-size: 12sepx;
   border-bottom: 1px groove #FFF;
   padding: 0px 5px;
 	color: #286DA3;
@@ -199,4 +199,81 @@ body {
 	padding: 10px;
 	border: 15px solid #286DA3;
 	background: #AAA;
+}
+
+a#new_goal_button {
+	
+} 
+a.clickable_button {
+	margin: auto;
+	min-width: 100px;
+	font-size: 12px;
+	text-decoration: none;
+	background: #EE4720;
+	color: #FFFFFF;
+	padding: 10px;
+	border-radius: 5px;
+  moz-border-radius: 5px;
+  webkit-border-radius: 5px;
+	-box-shadow: #333 0px 0px 5px;
+	-moz-box-shadow: #333 0px 0px 5px;
+	-webkit-box-shadow: #333 0px 0px 5px;
+}
+a.clickable_button:hover {
+	background: #FFF;
+	background: -moz-linear-gradient(top, #EE4720, #FF5831);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FF5831), to(#EE4720));
+}
+
+#goals_list {
+	width: 880px;
+}
+.goal_odd {
+	min-height: 50px;
+	background: #E8E8E8;
+	padding: 10px;
+	border-radius: 5px;
+  moz-border-radius: 5px;
+  webkit-border-radius: 5px;
+	margin-bottom: 1px;
+}
+.goal_even {
+	min-height: 50px;	
+	border: 1px solid #E8E8E8;	
+	padding: 10px;
+	border-radius: 5px;
+  moz-border-radius: 5px;
+  webkit-border-radius: 5px;	
+}
+.goal_name {
+	display: inline;
+}
+.goal_public {
+	display: inline;
+}
+.goal_delete {
+	display: inline;
+	position: relative;
+	top: -5px;
+	left: -5px;
+	text-align: center;
+	padding: 1px 1px 2px 4px;
+	background: #FFF;
+	color: #000;
+	height: 16px;
+	font-size: 12px;
+	width: 10px;
+	z-index: 999;
+	border: 1px solid gold;
+	-webkit-border-radius: 16px;
+	-moz-border-radius: 16px;
+	border-radius: 16px;	
+}
+.goal_delete a {
+	text-decoration: none;
+	color: inherit;
+	background: inherit;
+}
+.goal_delete a:hover {
+	color: gold;
 }
