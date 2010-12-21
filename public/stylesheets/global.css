@@ -196,14 +196,28 @@ body {
 #login {
 	margin: auto;
 	text-align: center;
+	min-width: 400px;
+	width: 50%;
 	padding: 10px;
 	border: 15px solid #286DA3;
-	background: #AAA;
+	background: #E8E8E8;
+	border-radius: 5px;
+  moz-border-radius: 5px;
+  webkit-border-radius: 5px;
+}
+#user_signin, #user_signup {
+	display: inline;
+}
+a.link {
+	text-decoration: none;
+	color: #FFFFFF;	
+	outline: none;
+	color: #286DA3;	
+}
+a.link:hover {
+	text-decoration: underline;
 }
 
-a#new_goal_button {
-	
-} 
 a.clickable_button {
 	margin: auto;
 	min-width: 100px;
@@ -276,4 +290,6 @@ a.clickable_button:hover {
 }
 .goal_delete a:hover {
 	color: gold;
+}
+a#new_goal_button {	
 }

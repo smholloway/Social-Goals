@@ -3,11 +3,12 @@
 		<h1>Login</h1>
 	</div> <!-- login_header -->
 	<div id="login_body">
-		<div id="user_signup" class="link_button">
-    	<%= link_to "Sign up", new_user_registration_path %>
+		<div id="user_signup">
+    	<%= link_to "Sign up", new_user_registration_path, :class => "link" %>
 		</div> <!-- user_signup -->
-		<div id="user_signin" class="link_button">
- 			<%= link_to "Sign in", new_user_session_path %>
+		or
+		<div id="user_signin">
+ 			<%= link_to "Sign in", new_user_session_path, :class => "link" %>
 		</div> <!-- user_signin -->
 	</div> <!-- login_body -->
 <div style="clear:both"> <br/> </div>
