@@ -2,6 +2,8 @@ class Goal < ActiveRecord::Base
   belongs_to  :user
   has_many    :tasks
   
+  attr_accessible :name, :description, :public
+  
   validates_presence_of :name, :user_id
   validates_associated  :user
   

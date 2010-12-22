@@ -1,0 +1,5 @@
+$('#notices').html('DESTROY.JS.ERB');
+/* Eliminate the goal by fading it out */
+$('#goal_<%= goal.id %>').fadeOut();
+/* Render the partial with all remaining goals */
+$("#goals_list").html("<%= escape_javascript( render(@goals) ) %>");

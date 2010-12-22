@@ -1,0 +1,3 @@
+$('#notices').html('INDEX.JS.ERB');
+/* Render the partial with all goals */
+$("#goals_list").html("<%= escape_javascript( render(@goals) ) %>");
