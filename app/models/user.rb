@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
-  has_many :goals
-  has_many :tasks
-  has_many :achievements
+  has_many :goals, :dependent => :destroy
+  has_many :tasks, :dependent => :destroy
+  has_many :achievements, :dependent => :destroy
   
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable

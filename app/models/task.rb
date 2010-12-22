@@ -8,7 +8,7 @@ class Task < ActiveRecord::Base
   has_many    :children,
               :foreign_key => 'parent_id',
               :class_name => 'Task',
-              :dependent => :delete_all
+              :dependent => :destroy
   
   validates_presence_of     :name, :percent_complete, :goal_id, :user_id
   validates_associated      :goal, :user
