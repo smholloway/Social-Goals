@@ -1,6 +1,6 @@
 class Goal < ActiveRecord::Base
   belongs_to  :user
-  has_many    :tasks
+  has_many    :tasks, :dependent => :destroy
   
   attr_accessible :name, :description, :public
   
