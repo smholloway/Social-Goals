@@ -38,4 +38,4 @@ startup_task1 = startup_goal.tasks.create(:name => 'Learn Ruby on Rails', :perce
 startup_task2 = startup_goal.tasks.create(:name => 'Design initial prototype', :percent_complete => 5) { |u| u.user_id = user_shayne.id}
 
 # Create some achievements
-achievement1 = user_shayne.achievements.create { |a| a.level = runner_level1 }
+achievement1 = user_shayne.achievements.create { |a| a.level_id = runner_level1.id }
