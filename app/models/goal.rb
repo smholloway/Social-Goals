@@ -3,6 +3,8 @@ class Goal < ActiveRecord::Base
   has_many    :tasks, :dependent => :destroy
   
   attr_accessible :name, :description, :public
+  attr_protected  :user_id
+  attr_readonly   :created_at
   
   validates_presence_of :name, :user_id
   validates_associated  :user

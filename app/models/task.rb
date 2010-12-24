@@ -10,6 +10,10 @@ class Task < ActiveRecord::Base
               :class_name => 'Task',
               :dependent => :destroy
   
+  attr_accessible :name, :description, :deadline, :percent_complete
+  attr_protected  :user_id, :goal_id, :parent_id
+  attr_readonly   :created_at
+  
   validates_presence_of     :name, :percent_complete, :goal_id, :user_id
   validates_associated      :goal, :user
   validates_numericality_of :percent_complete, :only_integer => true

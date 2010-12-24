@@ -2,9 +2,13 @@ class Achievement < ActiveRecord::Base
   belongs_to :user
   belongs_to :level
   
+  attr_accessible :public
+  attr_protected  :user_id, :level_id
+  attr_readonly   :created_at
+  
   validates_presence_of   :user_id, :level_id
-  validates_uniqueness_of :user_id, :scope => :level_id # prevents duplicate achievements
   validates_associated    :user, :level
+  validates_uniqueness_of :user_id, :scope => :level_id # prevents duplicate achievements
   validate :must_be_active
   
   def must_be_active
