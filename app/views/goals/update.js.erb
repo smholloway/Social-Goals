@@ -1,11 +1,5 @@
-<% if @goal.errors.any? -%>
-  $("#flash_notice").hide(300);
-  $("#goal_errors").html("<%= escape_javascript(error_messages_for(@goal))%>");
-  $("#goal_errors").show(300);
-<% else -%>
-  $("#goal_errors").hide(300);
-  $("#flash_notice").html("<%= escape_javascript(flash[:notice])%>");
-  $("#flash_notice").show(300);
-  $(":input:not(input[type=submit])").val("");
-  $("#goals_list").html("<%= escape_javascript( render(:partial => "goals") ) %>");
-<% end -%>
+/*$("#notices").html("app/views/goals/update.js.erb");*/
+
+/* Render the partial with all goals */
+$("#goals_list").html("");
+$("#goals_list").html("<%= escape_javascript( render(@goals) ) %>");

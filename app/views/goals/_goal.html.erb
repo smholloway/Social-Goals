@@ -1,11 +1,18 @@
 <div id="goal_<%= goal.id %>" class="<%= cycle('goal_odd', 'goal_even') %>">
+
 	<div class="goal_delete">
-		<%= link_to 'x', goal, :confirm => 'Are you sure?', :method => :delete, :remote => true %>
+		<%= link_to 'x', goal, :confirm => 'Really delete this goal?', 
+				:method => :delete, :remote => true %>
 	</div> <!-- goal_delete -->
+
 	<div class="goal_name">
 		<%= link_to goal.name, goal %>
 	</div> <!-- goal_name -->
+
 	<div class="goal_public">
+		<%= form_for(goal, :remote => true) do |f| %>
+			<%= f.hidden_field :public, { :value => !goal.public } %>
+		<% end %>
 		<% if goal.public == true %>
 			<div class="public_goal_on">Public</div>
 			<div class="private_goal_off">PP</div>
@@ -14,9 +21,9 @@
 			<div class="private_goal_on">Private</div>
 		<% end %>
 	</div> <!-- goal_public -->
+
 	<div class="goal_description">
 		<%= goal.description %>
 	</div> <!-- goal_description -->
-	<div style="display:none"><%= button_to 'Make Public', goals_path(goal), 
-	:remote => true, :method => :update, %> </div>
+
 </div> <!-- goal_<%= goal.id %> -->

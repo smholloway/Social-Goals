@@ -1,2 +1,7 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+	$('.public_goal_on').live('click', function(){
+		$(this).siblings('form').submit();
+	});
+
+	$('.private_goal_on').live('click', function(){
+		$(this).siblings('form').submit();
+	});

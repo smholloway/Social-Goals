@@ -247,6 +247,9 @@ a.clickable_button:hover {
 #goals_list {
 	width: 880px;
 }
+.edit_goal {
+	display: inline;
+}
 .goal_odd {
 	min-height: 50px;
 	background: #E8E8E8;
@@ -290,13 +293,19 @@ a.clickable_button:hover {
 	border: 0px solid #EE4720;		
 	border-radius: 2px;
   -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;	
+  -webkit-border-radius: 2px;
+	cursor: pointer;
 }
 .private_goal_off, .public_goal_off {
 	display: inline;
 	padding: 1px 3px;
 	background: transparent;
 	color: #FFF;	
+}
+.goal_description {
+	margin: auto;
+	padding: 2px;
+	width: 824px;
 }
 .goal_delete {
 	display: inline;
@@ -325,4 +334,8 @@ a.clickable_button:hover {
 	color: gold;
 }
 a#new_goal_button {	
+}
+
+.hidden {
+	visibility: hidden;
 }

@@ -48,7 +48,6 @@ class GoalsController < ApplicationController
   def update
     @goal = Goal.find_by_id(params[:id])
     redirect_to goals_url and return if !authorized(@goal)
-    flash[:notice] = 'Goal was successfully updated.' 
     
     respond_to do |format|
       if @goal.update_attributes(params[:goal])
@@ -65,15 +64,16 @@ class GoalsController < ApplicationController
     redirect_to goals_url and return if !authorized(@goal)
     @goal.tasks.destroy_all
     @goal.destroy
-    flash[:notice] = "Deleted goal."
+
     @goals = Goal.all
     
     respond_to do |format|
-      format.html { redirect_to goals_url }
+      format.html { redirect_to goals_url, :notice => "Deleted goal." }
       format.js { redirect_to goals_url }
       format.xml { head :ok }
     end
   end
+
   
   private
   
