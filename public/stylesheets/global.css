@@ -47,16 +47,21 @@ a {
 	font-size: 30px;
 	line-height: 50px;
 	font-variant: small-caps;
+	text-transform:lowercase;	
 	-webkit-font-smoothing: antialiased;
 	text-shadow: rgba(0, 0, 0, 0.246094) -1px -1px 0px;
+}
+.logo {
+	font-family: inherit;
 }
 #top_bar_logo a {
 	text-decoration: none;
 	outline: none;
-	color: #000;
+	color: #000000;
 }
 #top_bar_logo a:hover {
-	color: #286DA3;
+	color: #333333;
+	text-shadow: rgba(0, 0, 0, 0.246094) 2px 2px 2px;
 }
 #top_bar_links {
 	margin-top: 10px;
@@ -131,7 +136,7 @@ a {
 	color: #FFFFFF;
 	height: 50px;
 	line-height: 50px;
-	font-size: 24px;
+	font-size: 20px;
 	text-align: center;
 	-webkit-border-top-left-radius: 5px;
 	-webkit-border-top-right-radius: 5px;
@@ -147,7 +152,7 @@ a {
 	color: #CC0000;
 	height: 40px;
 	line-height: 40px;
-	font-size: 20px;
+	font-size: 18px;
 	text-align: right;
 	-webkit-border-bottom-left-radius: 5px;
 	-webkit-border-bottom-right-radius: 5px;
@@ -251,7 +256,7 @@ a.clickable_button:hover {
 	display: inline;
 }
 .goal_odd {
-	min-height: 50px;
+	min-height: 30px;
 	background: #E8E8E8;
 	padding: 10px;
 	border-radius: 5px;
@@ -260,7 +265,7 @@ a.clickable_button:hover {
 	margin-bottom: 1px;
 }
 .goal_even {
-	min-height: 50px;	
+	min-height: 30px;	
 	padding: 10px;
 	border: 1px solid #E8E8E8;	
 	border-radius: 5px;
@@ -269,12 +274,18 @@ a.clickable_button:hover {
 }
 .goal_name {
 	display: inline;
+	font-size: 18px;
+	line-height: 30px;
 }
 .goal_name a {
 	text-decoration: none;
 	color: #286DA3;
+	margin: auto 10px;
 }
 .goal_public {
+	position: relative;
+	top: -2px;
+	margin: auto 10px;	
 	display: inline;
 	background: #FFF;
 	border: 1px solid #AAA;		
@@ -282,7 +293,7 @@ a.clickable_button:hover {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
 	text-transform: uppercase;
-	font-size: 10px;
+	font-size: 9px;
 	padding: 2px 0px;
 }
 .public_goal_on, .private_goal_on {
@@ -311,7 +322,7 @@ a.clickable_button:hover {
 	display: inline;
 	position: relative;
 	top: -2px;
-	left: -5px;
+	margin: auto 10px;
 	text-align: center;
 	padding: 1px 1px 2px 5px;
 	background: #FFF;
@@ -319,7 +330,6 @@ a.clickable_button:hover {
 	height: 16px;
 	font-size: 12px;
 	width: 10px;
-	z-index: 999;
 	border: 1px solid gold;
 	-webkit-border-radius: 16px;
 	-moz-border-radius: 16px;
@@ -333,7 +343,58 @@ a.clickable_button:hover {
 .goal_delete a:hover {
 	color: gold;
 }
+.goal_edit {
+	display: inline;
+	position: relative;
+	top: -2px;
+	margin: auto 10px;
+	text-align: center;
+	padding: 1px 3px 2px 5px;
+	background: #FFF;
+	color: #000;
+	height: 16px;
+	font-size: 12px;
+	width: 10px;
+	border: 1px solid gold;
+	-webkit-border-radius: 16px;
+	-moz-border-radius: 16px;
+	border-radius: 16px;	
+}
+.goal_edit a {
+	text-decoration: none;
+	color: inherit;
+	background: inherit;
+}
+.goal_edit a:hover {
+	color: gold;
+}
 a#new_goal_button {	
+}
+#goal_tasks {
+	width: 820px;
+	margin: auto;
+}
+.plus_minus {
+	font-family: Courier New, monospace;
+	width: 12px;
+	margin-left: 18px;
+	display: inline;
+	text-align: center;
+	padding: 1px 1px 0px 2px;
+	height: 16px;
+	line-height: 16px;
+	font-size: 12px;
+	background: #FFFFFF;
+	cursor: pointer;
+	border: 1px solid gold;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;	
+}
+.task_list {
+	width: 800px;
+	margin: auto;
+	display: none;
 }
 
 .hidden {

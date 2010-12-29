@@ -22,8 +22,20 @@
 		<% end %>
 	</div> <!-- goal_public -->
 
-	<div class="goal_description">
+	<div class="goal_edit" style="display:none">
+		<%= link_to '>', edit_goal_path(goal) %>
+	</div> <!-- goal_edit -->
+	
+	<div class="goal_description" style="display:none">
 		<%= goal.description %>
 	</div> <!-- goal_description -->
 
+	<% if !goal.tasks.empty? %>
+		<div id="goal_<%= goal.id %>_tasks" style="display:none">
+			<div class="plus_minus">+</div>  <span>Tasks</span>
+			<ul class="task_list">
+				<%= render :partial => "tasks/task", :collection => goal.tasks %>
+			</ul> <!-- task_list -->
+	  </div> <!-- goal_<%= goal.id %>_tasks -->
+	<% end %>
 </div> <!-- goal_<%= goal.id %> -->

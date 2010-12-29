@@ -15,7 +15,7 @@
     <div id="top_bar">
 			<div id="top_bar_container">
 				<div id="top_bar_logo">
-					<%= link_to "Whichado", root_path %>
+					<%= link_to "Whichado", root_path, :class => "logo" %>
 				</div> <!-- top_bar_logo -->
 				<div id="top_bar_links">
 					<% if user_signed_in? %>
@@ -57,8 +57,8 @@
 			</div> <!-- banner -->
 			<div id="notices">
 				<div id="notices_info"> </div> <!-- notices_info -->
-				<p class="notice"><%= notice %></p>
-      	<p class="alert"><%= alert %></p>
+				<div class="notice"><%= notice %></div>
+      	<div class="alert"><%= alert %></div>
 			</div> <!-- notices -->
 
       <div id="content">
