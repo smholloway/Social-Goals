@@ -1,0 +1,3 @@
+$('#notices').html('app/views/tasks/DESTROY.JS.ERB');
+/* Render the partial with all remaining tasks */
+$("#tasks_list").html("<%= escape_javascript( render(@goal.tasks ) ) %>");

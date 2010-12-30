@@ -6,7 +6,8 @@ class TasksController < ApplicationController
   end
   
   def show
-    @task = Task.find_by_id(params[:id])
+    @goal = Goal.find(params[:goal_id])
+    @task = @goal.tasks.find(params[:id])
     redirect_to tasks_url and return if !authorized(@task)
     
     respond_to do |format|
@@ -15,7 +16,9 @@ class TasksController < ApplicationController
   end
   
   def edit
-    @task = Task.find_by_id(params[:id])
+    @goal = Goal.find(params[:goal_id])
+    #@task = Task.find_by_id(params[:id])
+    @task = @goal.tasks.find(params[:id])
     redirect_to tasks_url and return if !authorized(@task)
   end
   
@@ -27,6 +30,7 @@ class TasksController < ApplicationController
     respond_to do |format|
       if @task.save
         format.html { redirect_to(@goal, :notice => 'Task was successfully created.') }
+        format.js { @goal = Goal.find(params[:goal_id]) }
       else
         format.html { render :template => "goals/show" }
       end
@@ -34,8 +38,10 @@ class TasksController < ApplicationController
   end
   
   def update
-    @task = Task.find_by_id(params[:id])
-    redirect_to tasks_url and return if !authorized(@task)
+    @goal = Goal.find(params[:goal_id])
+    @task = @goal.tasks.find(params[:id])
+    #@task = Task.find_by_id(params[:id])
+    redirect_to goals_url and return if !authorized(@task)
     
     respond_to do |format|
       if @task.update_attributes(params[:task])
@@ -47,12 +53,15 @@ class TasksController < ApplicationController
   end
   
   def destroy
-    @task = Task.find_by_id(params[:id])
+    @goal = Goal.find(params[:goal_id])
+    @task = @goal.tasks.find(params[:id])    
+    #@task = Task.find_by_id(params[:id])
     redirect_to tasks_url and return if !authorized(@task)
     @task.destroy
     
     respond_to do |format|
-      format.html { redirect_to(@task.goal, :notice => 'Task was successfully deleted.')  }
+      format.html { redirect_to(goals_path(@goal), :notice => 'Task was successfully deleted.')  }
+      format.js { @goal = Goal.find(params[:goal_id]) }
     end
   end
   

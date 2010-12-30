@@ -1,0 +1,4 @@
+$("#notices").html("app/views/tasks/update.js.erb");
+
+/* Render the partial with all tasks */
+$("#tasks_list").html("<%= escape_javascript( render(@goal.tasks ) ) %>");

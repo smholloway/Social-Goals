@@ -1,3 +1,20 @@
 <% unless task.nil? %>
-  <li class="task-description">(<%= task.percent_complete %>%) <%= task.description %></li>
+<div id="goal_<%= @goal.id %>_task_<%= task.id %>" class="<%= cycle('_odd', '_even') %>">
+	<div class="task_delete">
+		<%= link_to 'x', goal_task_path(@goal, task), :confirm => 'Really delete this task?', 
+				:method => :delete, :remote => true %>
+	</div> <!-- task_delete -->
+
+	<div class="task_name">
+		<%= link_to task.name, goal_task_path(@goal, task) %>
+	</div> <!-- task_name -->
+
+	<div class="task_edit" style="display:none">
+		<%= link_to '>', edit_goal_task_path(@goal, task) %>
+	</div> <!-- task_edit -->
+
+  <div class="task-description">
+		(<%= task.percent_complete %>%) <%= task.description %>
+	</div>
+</div> <!-- goal_<%= @goal.id %>_task_<%= task.id %> -->
 <% end %>

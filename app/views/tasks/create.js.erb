@@ -1,0 +1,7 @@
+$("#notices").html("app/views/tasks/create.js.erb");
+
+/* Render the partial with all tasks */
+$('#new_task')[0].reset();
+$('#new_task_button').toggle();
+$('#new_task_container').toggle();
+$("#tasks_list").html("<%= escape_javascript( render(@goal.tasks ) ) %>");

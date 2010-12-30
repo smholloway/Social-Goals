@@ -13,14 +13,14 @@
 
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_area :name, :class => "styled_text_area_1_400" %>
   </div>
   <div class="field">
     <%= f.label :description %><br />
-    <%= f.text_area :description %>
+    <%= f.text_area :description, :class => "styled_text_area_3_400" %>
   </div>
   <div class="field">
-    <%= f.label :public %><br />
+    <%= f.label :public %>
     <%= f.check_box :public %>
   </div>
   <div class="actions">

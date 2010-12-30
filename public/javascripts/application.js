@@ -13,6 +13,10 @@
 		} else {
 			$(this).replaceWith('<div class="plus_minus">+</div>');
 		}
-		
+	});
+	
+	$('#new_task_button').live('click', function(){
+		$('#new_task_button').toggle();
+		$('#new_task_container').toggle();
 	});
 	

@@ -255,7 +255,7 @@ a.clickable_button:hover {
 .edit_goal {
 	display: inline;
 }
-.goal_odd {
+._odd {
 	min-height: 30px;
 	background: #E8E8E8;
 	padding: 10px;
@@ -264,7 +264,7 @@ a.clickable_button:hover {
   -webkit-border-radius: 5px;
 	margin-bottom: 1px;
 }
-.goal_even {
+._even {
 	min-height: 30px;	
 	padding: 10px;
 	border: 1px solid #E8E8E8;	
@@ -272,12 +272,12 @@ a.clickable_button:hover {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;	
 }
-.goal_name {
+.goal_name, .task_name {
 	display: inline;
 	font-size: 18px;
 	line-height: 30px;
 }
-.goal_name a {
+.goal_name a, .task_name a {
 	text-decoration: none;
 	color: #286DA3;
 	margin: auto 10px;
@@ -318,7 +318,7 @@ a.clickable_button:hover {
 	padding: 2px;
 	width: 824px;
 }
-.goal_delete {
+.goal_delete, .task_delete {
 	display: inline;
 	position: relative;
 	top: -2px;
@@ -335,15 +335,15 @@ a.clickable_button:hover {
 	-moz-border-radius: 16px;
 	border-radius: 16px;	
 }
-.goal_delete a {
+.goal_delete a, .task_delete a {
 	text-decoration: none;
 	color: inherit;
 	background: inherit;
 }
-.goal_delete a:hover {
+.goal_delete a:hover, .task_delete a:hover {
 	color: gold;
 }
-.goal_edit {
+.goal_edit, .task_edit {
 	display: inline;
 	position: relative;
 	top: -2px;
@@ -360,12 +360,12 @@ a.clickable_button:hover {
 	-moz-border-radius: 16px;
 	border-radius: 16px;	
 }
-.goal_edit a {
+.goal_edit a, .task_edit a {
 	text-decoration: none;
 	color: inherit;
 	background: inherit;
 }
-.goal_edit a:hover {
+.goal_edit a:hover, .task_edit a:hover {
 	color: gold;
 }
 a#new_goal_button {	
@@ -395,6 +395,19 @@ a#new_goal_button {
 	width: 800px;
 	margin: auto;
 	display: none;
+}
+
+textarea.styled_text_area_1_20 {
+	width: 20px;
+	height: 16px;
+}
+textarea.styled_text_area_1_400 {
+	width: 400px;
+	height: 16px;
+}
+textarea.styled_text_area_3_400 {
+	width: 400px;
+	height: 48px;
 }
 
 .hidden {

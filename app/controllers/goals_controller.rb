@@ -52,7 +52,7 @@ class GoalsController < ApplicationController
     respond_to do |format|
       if @goal.update_attributes(params[:goal])
         format.html { redirect_to(@goal, :notice => 'Goal was successfully updated.') }
-        format.js { @goals = Goal.all }
+        format.js { @goals = Goal.where(:user_id => current_user.id) }
       else
         format.html { render :action => "edit" }
       end
@@ -65,7 +65,7 @@ class GoalsController < ApplicationController
     @goal.tasks.destroy_all
     @goal.destroy
 
-    @goals = Goal.all
+    @goals = Goal.where(:user_id => current_user.id) 
     
     respond_to do |format|
       format.html { redirect_to goals_url, :notice => "Deleted goal." }

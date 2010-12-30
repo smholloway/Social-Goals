@@ -1,4 +1,4 @@
-<%= form_for [@goal,@task] do |f| %>
+<%= form_for ([@goal, @task]), :remote => true do |f| %>
   <% if @task.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
@@ -13,19 +13,19 @@
 
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_area :name, :class => "styled_text_area_1_400" %>
   </div>
   <div class="field">
     <%= f.label :description %><br />
-    <%= f.text_area :description %>
+    <%= f.text_area :description, :class => "styled_text_area_3_400" %>
   </div>
   <div class="field">
     <%= f.label :deadline %><br />
     <%= f.date_select :deadline %>
   </div>
   <div class="field">
-    <%= f.label :percent_complete %><br />
-    <%= f.text_field :percent_complete %>
+    <%= f.label :percent_complete %> (0-100) 
+    <%= f.text_field :percent_complete, :size => "4" %>
   </div>
   <div class="actions">
     <%= f.submit %>

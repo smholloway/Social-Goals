@@ -1,34 +1,24 @@
 AchieveAnything::Application.routes.draw do
-  get "home/login"
-
-  # get "user/show"
-  resources :levels
+  root :to => "home#index"
   
   resources :achievement_types do
-    resource :levels
+    resources :levels
   end
   
   resources :achievements
 
-  resources :tasks
-
   resources :goals do
-    resource :tasks
+    resources :tasks
   end
 
   devise_for :users
 
   devise_for :admins
 
-  get "goals/index"
-
-  get "achievements/index"
-
   resources :users
 
   get "home/index"
-
-  root :to => "home#index"
+  get "home/login"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -86,4 +76,5 @@ AchieveAnything::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
+  match '*a' => redirect('/')
 end

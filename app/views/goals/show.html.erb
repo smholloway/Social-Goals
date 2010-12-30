@@ -1,4 +1,4 @@
-<h3><%= @goal.name %></h3>
+<h1>Goal: <%= @goal.name %></h1>
 <i>(This goal is currently <%= @goal.public? ? 'public' : 'private' %>.)</i>
 <p>
   <%= @goal.description %>
@@ -6,20 +6,23 @@
 <%= link_to 'Edit', edit_goal_path(@goal) %> |
 <%= link_to 'Back', goals_path %>
 
-<br><br>
-<b>Tasks:</b> <%= 'none' if @goal.tasks.empty? %>
-<table>
-<% @goal.tasks.each do |task| %>
-  <tr>
-    <td><%= link_to task.name, task %> <%= display_time_left(task) %></td>
-    <td><%= task.percent_complete %>% complete</td>
-  </tr>
-<% end %>
-</table>
-
 <br>
-<hr>
 <br>
 
-<b>Add Task</b>
-<%= render 'tasks/form' %>
+<h1>Tasks</h1>
+<div id="tasks_list">
+	<%= render :partial => 'tasks/task', :collection => @goal.tasks %>
+</div> <!-- tasks_list -->
+
+<br />
+
+<div id="new_task_container" style="display:none">
+	<%= render 'tasks/form' %>
+</div> <!-- new_task -->
+
+<div id="new_task_button"><a href="JavaScript:void()" class="clickable_button">New Task</a></div>
+
+<%#= link_to 'New Task', '', :id => "new_task_button1", :class => "clickable_button1" %>
+
+<br/>
+
