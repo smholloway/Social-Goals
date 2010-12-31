@@ -15,10 +15,20 @@ class User < ActiveRecord::Base
   attr_accessible :login, :name, :email, :password, :password_confirmation, :remember_me
   attr_protected  :goals, :tasks, :achievements
   
+  # normalize name/email, and ensure uniqueness of name (email already checked by Devise)
+  before_save :downcase_login
+  validates :name, {:uniqueness => {:case_sensitive => false}}
+  
   protected
-
+    
+    def downcase_login
+      self.email.downcase! if self.email
+      self.name.downcase! if self.name
+    end
+    
     def self.find_for_database_authentication(conditions)
       value = conditions[authentication_keys.first]
+      value.downcase! if value
       where(["name = :value OR email = :value", { :value => value }]).first
     end
 end
