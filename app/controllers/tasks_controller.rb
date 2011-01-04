@@ -6,9 +6,10 @@ class TasksController < ApplicationController
   end
   
   def show
-    @goal = Goal.find(params[:goal_id])
-    @task = @goal.tasks.find(params[:id])
-    redirect_to tasks_url and return if !authorized(@task)
+    @goal = Goal.find_by_id(params[:goal_id])
+    redirect_to goals_url and return if @goal.nil?
+    @task = @goal.tasks.find_by_id(params[:id])
+    redirect_to goals_url and return if @task.nil? or !@task.view_authorized(current_user)
     
     respond_to do |format|
       format.html
@@ -16,14 +17,15 @@ class TasksController < ApplicationController
   end
   
   def edit
-    @goal = Goal.find(params[:goal_id])
-    #@task = Task.find_by_id(params[:id])
-    @task = @goal.tasks.find(params[:id])
-    redirect_to tasks_url and return if !authorized(@task)
+    @goal = Goal.find_by_id(params[:goal_id])
+    redirect_to goals_url and return if @goal.nil?
+    @task = @goal.tasks.find_by_id(params[:id])
+    redirect_to goals_url and return if @task.nil? or !@task.edit_authorized(current_user)
   end
   
   def create
-    @goal = Goal.find(params[:goal_id])
+    @goal = Goal.find_by_id(params[:goal_id])
+    redirect_to goals_url and return if @goal.nil?
     @task = @goal.tasks.new(params[:task])
     @task.user_id = current_user.id
     
@@ -38,10 +40,10 @@ class TasksController < ApplicationController
   end
   
   def update
-    @goal = Goal.find(params[:goal_id])
-    @task = @goal.tasks.find(params[:id])
-    #@task = Task.find_by_id(params[:id])
-    redirect_to goals_url and return if !authorized(@task)
+    @goal = Goal.find_by_id(params[:goal_id])
+    redirect_to goals_url and return if @goal.nil?
+    @task = @goal.tasks.find_by_id(params[:id])
+    redirect_to goals_url and return if @task.nil? or !@task.edit_authorized(current_user)
     
     respond_to do |format|
       if @task.update_attributes(params[:task])
@@ -53,23 +55,17 @@ class TasksController < ApplicationController
   end
   
   def destroy
-    @goal = Goal.find(params[:goal_id])
-    @task = @goal.tasks.find(params[:id])    
-    #@task = Task.find_by_id(params[:id])
-    redirect_to tasks_url and return if !authorized(@task)
+    @goal = Goal.find_by_id(params[:goal_id])
+    redirect_to goals_url and return if @goal.nil?
+    @task = @goal.tasks.find_by_id(params[:id])    
+    redirect_to goals_url and return if @task.nil? or !@task.edit_authorized(current_user)
+    
     @task.destroy
     
     respond_to do |format|
       format.html { redirect_to(goals_path(@goal), :notice => 'Task was successfully deleted.')  }
       format.js { @goal = Goal.find(params[:goal_id]) }
     end
-  end
-  
-  private
-  
-  def authorized(task)
-    return false if task.nil? || task.user_id != current_user.id
-    return true
   end
   
 end

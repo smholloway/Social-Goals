@@ -11,7 +11,8 @@ class AchievementsController < ApplicationController
   
   def show
     @achievement = Achievement.find_by_id(params[:id])
-    redirect_to achievements_url and return if !authorized(@achievement)
+    redirect_to achievements_url and return if @achievement.nil? or 
+      !@achievement.view_authorized(current_user)
     
     respond_to do |format|
       format.html
@@ -20,7 +21,8 @@ class AchievementsController < ApplicationController
   
   def edit
     @achievement = Achievement.find_by_id(params[:id])
-    redirect_to achievements_url and return if !authorized(@achievement)
+    redirect_to achievements_url and return if @achievement.nil? or 
+      !@achievement.edit_authorized(current_user)
   end
   
   def create
@@ -37,7 +39,8 @@ class AchievementsController < ApplicationController
   
   def update
     @achievement = Achievement.find_by_id(params[:id])
-    redirect_to achievements_url and return if !authorized(@achievement)
+    redirect_to achievements_url and return if @achievement.nil? or 
+      !@achievement.edit_authorized(current_user)
     
     respond_to do |format|
       if @achievement.update_attributes(params[:achievement])
@@ -50,21 +53,14 @@ class AchievementsController < ApplicationController
   
   def destroy
     @achievement = Achievement.find_by_id(params[:id])
-    redirect_to achievements_url and return if !authorized(@achievement)
+    redirect_to achievements_url and return if @achievement.nil? or 
+      !@achievement.edit_authorized(current_user)
+    
     @achievement.destroy
     
     respond_to do |format|
       format.html { redirect_to(achievements_url) }
     end
-  end
-  
-  private
-  
-  def authorized(achievement)
-    return false if achievement.nil?
-    # only show hidden achievements if the user owns it
-    return false if !achievement.public? && achievement.user_id != current_user.id
-    return true
   end
   
 end

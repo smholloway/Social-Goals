@@ -13,4 +13,15 @@ class Goal < ActiveRecord::Base
     return self.all(:conditions => ["public = ?", public_only],
                     :limit => limit_amount, :order => "created_at DESC")
   end
+  
+  # anyone can view public goals; owner can view their own public/private goals
+  def view_authorized(current_user)
+    return self.public? || self.edit_authorized(current_user)
+  end
+  
+  # only owner can edit their own goals
+  def edit_authorized(current_user)
+    return self.user_id == current_user.id
+  end
+  
 end
