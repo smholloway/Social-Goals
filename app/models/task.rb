@@ -18,4 +18,15 @@ class Task < ActiveRecord::Base
   validates_associated      :goal, :user
   validates_numericality_of :percent_complete, :only_integer => true
   validates_inclusion_of    :percent_complete, :in => 0..100, :message => "can only be integer values between 0 and 100."
+  
+  # anyone can view tasks from public goals; owner can view their own public/private tasks
+  def view_authorized(current_user)
+    return self.goal.public? || self.edit_authorized(current_user)
+  end
+  
+  # only owner can edit their own tasks
+  def edit_authorized(current_user)
+    return self.user_id == current_user.id
+  end
+  
 end

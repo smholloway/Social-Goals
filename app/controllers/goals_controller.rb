@@ -12,7 +12,7 @@ class GoalsController < ApplicationController
   
   def show
     @goal = Goal.find_by_id(params[:id])
-    redirect_to goals_url and return if !authorized(@goal)
+    redirect_to goals_url and return if @goal.nil? or !@goal.view_authorized(current_user)
     @task = current_user.tasks.build(:goal_id => @goal.id)
     
     respond_to do |format|
@@ -30,7 +30,7 @@ class GoalsController < ApplicationController
   
   def edit
     @goal = Goal.find_by_id(params[:id])
-    redirect_to goals_url and return if !authorized(@goal)
+    redirect_to goals_url and return if @goal.nil? or !@goal.edit_authorized(current_user)
   end
   
   def create
@@ -47,7 +47,7 @@ class GoalsController < ApplicationController
   
   def update
     @goal = Goal.find_by_id(params[:id])
-    redirect_to goals_url and return if !authorized(@goal)
+    redirect_to goals_url and return if @goal.nil? or !@goal.edit_authorized(current_user)
     
     respond_to do |format|
       if @goal.update_attributes(params[:goal])
@@ -61,7 +61,8 @@ class GoalsController < ApplicationController
   
   def destroy
     @goal = Goal.find_by_id(params[:id])
-    redirect_to goals_url and return if !authorized(@goal)
+    redirect_to goals_url and return if @goal.nil? or !@goal.edit_authorized(current_user)
+    
     @goal.tasks.destroy_all
     @goal.destroy
 
@@ -72,16 +73,6 @@ class GoalsController < ApplicationController
       format.js { redirect_to goals_url }
       format.xml { head :ok }
     end
-  end
-
-  
-  private
-  
-  def authorized(goal)
-    return false if goal.nil?
-    # only show hidden goals if the user owns it
-    return false if !goal.public? && goal.user_id != current_user.id
-    return true
   end
   
 end
