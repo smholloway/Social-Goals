@@ -1,5 +1,6 @@
-$('#notices').html('DESTROY.JS.ERB');
-/* Eliminate the goal by fading it out */
-$('#goal_<%= goal.id %>').fadeOut();
+<% if Rails.env.development? %>
+$('#notices').html('Goal successfully deleted');
+<% end %>
+
 /* Render the partial with all remaining goals */
-$("#goals_list").html("<%= escape_javascript( render(@goals) ) %>");
+$("#goals_list").html("<% if @goals.empty? %>Create a new goal!<% else %><%= escape_javascript( render(@goals) ) %><% end %>");

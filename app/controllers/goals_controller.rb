@@ -69,7 +69,7 @@ class GoalsController < ApplicationController
     
     respond_to do |format|
       format.html { redirect_to goals_url, :notice => "Deleted goal." }
-      format.js { redirect_to goals_url }
+      format.js { @goals = Goal.where(:user_id => current_user.id) }
       format.xml { head :ok }
     end
   end

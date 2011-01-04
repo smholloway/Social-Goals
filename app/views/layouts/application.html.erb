@@ -29,16 +29,16 @@
 					<div id="top_bar_goals" class="link_button">
 						<%= link_to 'Goals', goals_path %>
 					</div> <!-- top_bar_goals -->
-					<div id="top_bar_achievements" class="link_button">
-						<%= link_to "Achievements", achievements_path %>
-					</div> <!-- top_bar_achievements -->
 					<% if user_signed_in? %>
 						<div id="user_signout" class="link_button">
 					    <%= link_to "Sign out", destroy_user_session_path %>
 						</div> <!-- user_signout -->
 					<% else %>
-						<div id="user_login" class="link_button">
-					    <%= link_to "Login", home_login_path %>
+						<div id="user_signup" class="link_button">
+					    <%= link_to "Sign up", new_user_registration_path %>
+						</div> <!-- user_login -->
+						<div id="user_signin" class="link_button">
+					    <%= link_to "Sign in", new_user_session_path %>
 						</div> <!-- user_login -->
 					<% end %>
 		    </div> <!-- top_bar_links -->
@@ -49,10 +49,10 @@
     <div id="site">
 			<div id="banner">
 				<div id="banner_top">
-					10,000+ people are using Whichado to achieve anything<span class="strong">*</span>
+					No matter what you do, Whichado*
 				</div> <!-- banner_top -->
 				<div id="banner_bottom">
-					<span class="strong">*</span>Not really, but our moms think its cool! &nbsp;
+					*Goal tracking that helps you achieve anything &nbsp;
 	    	</div> <!-- banner_bottom -->
 			</div> <!-- banner -->
 			<div id="notices">
@@ -67,21 +67,6 @@
     	<div style="clear:both"><br/></div>
 
   	</div> <!-- site -->
-
-		<div id="footer">
-			Some footer content
-		</div> <!-- footer -->
-
-		<div id="admin_signin" style="display:all">
-			Admin:
-			<% if admin_signed_in? %>
-		  	Signed in as <%= current_admin.email %>. Not you?
-		    <%= link_to "Sign out", destroy_admin_session_path %>
-		  <% else %>
-		    <%= link_to "Sign up", new_admin_registration_path %> or <%= link_to "sign in", new_admin_session_path %>
-			<% end %>
-		</div> <!-- admin_signin -->
-		<%= debug(params) if Rails.env.development? %>
   </div> <!-- page -->
 </body>
 </html>

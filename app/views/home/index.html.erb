@@ -2,5 +2,8 @@
 	<h1>Welcome!</h1>
 	<p>We want to help you succeed with an unobtrusive system that keeps you motivated and organized. We hope you'll like it.</p>
 	<br>
-	<%= link_to 'Achievement Types', achievement_types_path %>
+	<div id="recent_activity">
+		<h1>Recent Activity</h1>
+		<%= render :partial => "home/goal", :collection => @goals %>
+	</div> <!-- recent_activity -->
 </div> <!-- home -->

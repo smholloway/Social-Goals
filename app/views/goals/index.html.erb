@@ -1,10 +1,16 @@
+<% if @goals.empty? %>
+<h1>Goals</h1>
+<br/>
+<div>
+	To start, create a goal and any tasks necessary to complete that goal.
+</div>
+<% else %>
 <h1>Your current goals</h1>
-
 <br />
-		
 <div id="goals_list">
 	<%= render @goals %>
 </div> <!-- goals_list -->
+<% end %>
 
 <br/>
 

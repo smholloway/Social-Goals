@@ -18,8 +18,8 @@ a {
 }
 
 #content {
-	width: 880;
-  padding: 10px;
+	width: 880px;
+	padding: 10px;
 }
 
 #top_bar {
@@ -168,6 +168,7 @@ a {
 	padding: 2px;
 	margin: 5px auto 2px;
 	text-align: center;
+	color: green;
 }
 .notice {
 	color: green;
@@ -205,15 +206,25 @@ a {
 
 #login {
 	margin: auto;
+	padding: 10px 0px;
 	text-align: center;
 	min-width: 400px;
-	width: 50%;
-	padding: 10px;
-	border: 15px solid #286DA3;
+	width: 100%;
+}
+#login-fancy {
+	margin: auto;
+	padding: 10px 0px;
+	text-align: center;
+	min-width: 400px;
+	width: 100%;
+	border: 1px solid #E8E8E8;
 	background: #E8E8E8;
 	border-radius: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
+	-webkit-box-shadow: #333 0px 0px 5px;
+	-moz-box-shadow: #333 0px 0px 5px;
+	-box-shadow: #333 0px 0px 5px;
 }
 #user_signin, #user_signup {
 	display: inline;
@@ -274,7 +285,7 @@ a.clickable_button:hover {
 }
 .goal_name, .task_name {
 	display: inline;
-	font-size: 18px;
+	font-size: 16px;
 	line-height: 30px;
 }
 .goal_name a, .task_name a {
@@ -317,6 +328,7 @@ a.clickable_button:hover {
 	margin: auto;
 	padding: 2px;
 	width: 824px;
+	font-size: 13px;
 }
 .goal_delete, .task_delete {
 	display: inline;
@@ -412,4 +424,19 @@ textarea.styled_text_area_3_400 {
 
 .hidden {
 	visibility: hidden;
+}
+.hover {
+	z-index: 999;
+	width: 220px;
+	position: absolute;
+	background: #286DA3;
+	color: #FFFFFF;
+	padding: 5px;
+	border: 1px solid #FFFFFF;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	top: -50px;
+	left: auto;
+	text-align: center;
 }

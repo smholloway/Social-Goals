@@ -1,3 +1,6 @@
-$('#notices').html('INDEX.JS.ERB');
+<% if Rails.env.development? %>
+$('#notices').html('Listing goals');
+<% end %>
+
 /* Render the partial with all goals */
-$("#goals_list").html("<%= escape_javascript( render(@goals) ) %>");
+$("#goals_list").html("<% if @goals.empty? %>Create a new goal!<% else %><%= escape_javascript( render(@goals) ) %><% end %>");

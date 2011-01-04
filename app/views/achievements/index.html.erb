@@ -1,27 +1,21 @@
 <div id="achievements">
-	<h1>Listing achievements</h1>
+	<h1> Coming soon! </h1>
+	<br/>
+	
+	<h3>Your achievements</h3>
 
-	<table>
-	  <tr>
-		<th>Achievement Type</th>
-		<th>Level</th>
-	    <th>Public</th>
-	    <th></th>
-	    <th></th>
-	    <th></th>
-	  </tr>
-
+	<div style="display:none">
 		<% @achievements.each do |achievement| %>
-		  <tr>
-			<td><%= achievement.level.achievement_type.name %></td>
-			<td><%= achievement.level.name %></td>
-		    <td><%= achievement.public %></td>
-		    <td><%= link_to 'Show', achievement %></td>
-		    <td><%= link_to 'Edit', edit_achievement_path(achievement) %></td>
-		    <td><%= link_to 'Destroy', achievement, :confirm => 'Are you sure?', :method => :delete %></td>
-		  </tr>
+		  <div>
+			<div><%= achievement.level.achievement_type.name %></div>
+			<div><%= achievement.level.name %></div>
+		    <div>><%= achievement.public %></div>
+		    <div><%= link_to 'Show', achievement %></div>
+		    <div><%= link_to 'Edit', edit_achievement_path(achievement) %></div>
+		    <div><%= link_to 'Destroy', achievement, :confirm => 'Are you sure?', :method => :delete %></div>
+		  </div>
 		<% end %>
-	</table>
+	</div>
 	
 	<br class="clear:both"/>
 	<div id="achievements_body">

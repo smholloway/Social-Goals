@@ -1,4 +1,6 @@
+<% if Rails.env.development? %>
 $("#notices").html("app/views/tasks/create.js.erb");
+<% end %>
 
 /* Render the partial with all tasks */
 $('#new_task')[0].reset();

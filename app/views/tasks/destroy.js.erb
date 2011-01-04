@@ -1,3 +1,6 @@
+<% if Rails.env.development? %>
 $('#notices').html('app/views/tasks/DESTROY.JS.ERB');
+<% end %>
+
 /* Render the partial with all remaining tasks */
 $("#tasks_list").html("<%= escape_javascript( render(@goal.tasks ) ) %>");

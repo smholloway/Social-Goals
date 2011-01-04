@@ -1,3 +1,6 @@
-$('#notices').html('CREATE.JS.ERB');
+<% if Rails.env.development? %>
+$('#notices').html('Goal successfully created');
+<% end %>
+
 /* Render the partial with all goals */
 $("#goals_list").html("<%= escape_javascript( render(@goals) ) %>");
