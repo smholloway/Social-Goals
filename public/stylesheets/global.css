@@ -95,9 +95,6 @@ a {
 	text-decoration: underline;
 }
 
-#user_login {
-}
-
 #site {
   margin: -20px auto 10px;
   position: relative;
@@ -226,8 +223,19 @@ a {
 	-moz-box-shadow: #333 0px 0px 5px;
 	-box-shadow: #333 0px 0px 5px;
 }
+#user_login {
+}
 #user_signin, #user_signup {
-	display: inline;
+	padding: 10px;
+	float: left;
+	width: 200px;
+	text-align: center;
+}
+#user_signin {
+	margin-left: 210px;
+}
+#user_signup {
+	margin-left: 10px;
 }
 a.link {
 	text-decoration: none;

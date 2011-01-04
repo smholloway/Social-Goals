@@ -1,17 +1,13 @@
-<h2>Sign in</h2>
+<div id="user_login">
+	<div id="user_signin">
+		<h2>Sign in</h2>
+		<%= render :partial => "devise/sessions/new" %>
+	</div> <!-- user_signin -->
+	
+	<div id="user_signup">
+		<h2>Sign up</h2>
+		<%= render :partial => "devise/registrations/new" %>
+	</div> <!-- user_signup -->
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <p><%= f.label "Username or email address" %><br />
-  <%= f.text_field :login %></p>
-
-  <p><%= f.label :password %><br />
-  <%= f.password_field :password %></p>
-
-  <% if devise_mapping.rememberable? -%>
-    <p><%= f.check_box :remember_me %> <%= f.label :remember_me %></p>
-  <% end -%>
-
-  <p><%= f.submit "Sign in" %></p>
-<% end %>
-
-<%= render :partial => "devise/shared/links" %>
+	<div style="clear:both"> <br/> </div>
+</div> <!-- user_login -->

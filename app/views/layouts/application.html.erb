@@ -30,16 +30,13 @@
 						<%= link_to 'Goals', goals_path %>
 					</div> <!-- top_bar_goals -->
 					<% if user_signed_in? %>
-						<div id="user_signout" class="link_button">
+						<div id="top_bar_signout" class="link_button">
 					    <%= link_to "Sign out", destroy_user_session_path %>
 						</div> <!-- user_signout -->
 					<% else %>
-						<div id="user_signup" class="link_button">
-					    <%= link_to "Sign up", new_user_registration_path %>
-						</div> <!-- user_login -->
-						<div id="user_signin" class="link_button">
+						<div id="top_bar_login" class="link_button">
 					    <%= link_to "Sign in", new_user_session_path %>
-						</div> <!-- user_login -->
+						</div> <!-- top_bar_login -->
 					<% end %>
 		    </div> <!-- top_bar_links -->
 			</div> <!-- top_bar_container -->
