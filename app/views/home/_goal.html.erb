@@ -1,0 +1,11 @@
+<div id="goal_<%= goal.id %>" class="<%= cycle('_odd', '_even') %>">
+
+	<div class="goal_name">
+		<%= link_to truncate(strip_tags(goal.name), 
+		:length => 80), goal %>
+	</div> <!-- goal_name -->
+	
+	<div class="goal_description">
+		<%= goal.description %>
+	</div> <!-- goal_description -->
+</div> <!-- goal_<%= goal.id %> -->
