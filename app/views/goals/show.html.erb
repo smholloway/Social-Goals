@@ -1,28 +1,54 @@
-<h1>Goal: <%= @goal.name %></h1>
-<i>(This goal is currently <%= @goal.public? ? 'public' : 'private' %>.)</i>
-<p>
-  <%= @goal.description %>
-</p>
-<%= link_to 'Edit', edit_goal_path(@goal) %> |
-<%= link_to 'Back', goals_path %>
+<% title @goal.name %>
+<h1>Goal: <%= truncate(strip_tags(@goal.name), :length => 140) %></h1>
+<% if @goal.edit_authorized(current_user) %>
+	<span class="italic">(This goal is currently <%= @goal.public? ? 'public' : 'private' %>.)</span>
+<% end %>
+<div>
+	<%= truncate(strip_tags(@goal.description), :length => 140) %>
+</div>
 
-<br>
-<br>
+<div>
+<% if @goal.edit_authorized(current_user) %>
+	<%= link_to 'Edit', edit_goal_path(@goal) %> |
+<% end %>
+<%= link_to 'Back', goals_path %>
+</div>
+
+<br/>
 
 <h1>Tasks</h1>
 <div id="tasks_list">
-	<%= render :partial => 'tasks/task', :collection => @goal.tasks %>
+	<% if @goal.tasks.empty? %>
+		None
+	<% else %>	
+		<%= render :partial => 'tasks/task', :collection => @goal.tasks %>
+	<% end %>
 </div> <!-- tasks_list -->
 
 <br />
 
-<div id="new_task_container" style="display:none">
-	<%= render 'tasks/form' %>
-</div> <!-- new_task -->
+<% if @goal.edit_authorized(current_user) %>
+	<div id="new_task_container" style="display:none">
+		<%= render 'tasks/form' %>
+	</div> <!-- new_task -->
 
-<div id="new_task_button"><a href="JavaScript:void()" class="clickable_button">New Task</a></div>
-
-<%#= link_to 'New Task', '', :id => "new_task_button1", :class => "clickable_button1" %>
+	<div id="new_task_button">
+		<a href="JavaScript:void()" class="clickable_button">New Task</a>
+	</div>
+<% end %>
 
 <br/>
-
+<hr/>
+<div id="facebook">
+	<div id="fb-root"></div>
+	<script src="http://connect.facebook.net/en_US/all.js#appId=177705052247906&amp;amp;xfbml=1"></script>
+	<script>
+	  FB.init({
+	    appId  : '177705052247906',
+	    status : true, // check login status
+	    cookie : true, // enable cookies to allow the server to access the session
+	    xfbml  : true  // parse XFBML
+	  });
+	</script>
+	<fb:comments numposts="10" width="425" publish_feed="true"></fb:comments>
+</div> <!-- facebook -->

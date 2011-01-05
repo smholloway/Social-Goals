@@ -25,7 +25,7 @@ class TasksController < ApplicationController
   
   def create
     @goal = Goal.find_by_id(params[:goal_id])
-    redirect_to goals_url and return if @goal.nil?
+    redirect_to goals_url and return if @goal.nil? or !@goal.edit_authorized(current_user)
     @task = @goal.tasks.new(params[:task])
     @task.user_id = current_user.id
     

@@ -430,6 +430,9 @@ textarea.styled_text_area_3_400 {
 	height: 48px;
 }
 
+.italic {
+	font-style:italic;
+}
 .hidden {
 	visibility: hidden;
 }
