@@ -417,6 +417,11 @@ a#new_goal_button {
 	display: none;
 }
 
+#social_integration {
+	width: 620px;
+	margin: auto;
+}
+
 textarea.styled_text_area_1_20 {
 	width: 20px;
 	height: 16px;
@@ -432,6 +437,9 @@ textarea.styled_text_area_3_400 {
 
 .italic {
 	font-style:italic;
+}
+.bold {
+	font-weight: bold;
 }
 .hidden {
 	visibility: hidden;

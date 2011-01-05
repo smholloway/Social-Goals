@@ -1,7 +1,9 @@
 <% title @goal.name %>
-<h1>Goal: <%= truncate(strip_tags(@goal.name), :length => 140) %></h1>
+<span class="bold">Goal: <%= truncate(strip_tags(@goal.name), :length => 140) %></span> 
 <% if @goal.edit_authorized(current_user) %>
 	<span class="italic">(This goal is currently <%= @goal.public? ? 'public' : 'private' %>.)</span>
+<% else %>
+	by <span class="italic"><%= link_to @goal.user.name, '/'+@goal.user.name %></span>
 <% end %>
 <div>
 	<%= truncate(strip_tags(@goal.description), :length => 140) %>
@@ -39,7 +41,7 @@
 
 <br/>
 <hr/>
-<div id="facebook">
+<div id="social_integration">
 	<div id="fb-root"></div>
 	<script src="http://connect.facebook.net/en_US/all.js#appId=177705052247906&amp;amp;xfbml=1"></script>
 	<script>
@@ -50,5 +52,5 @@
 	    xfbml  : true  // parse XFBML
 	  });
 	</script>
-	<fb:comments numposts="10" width="425" publish_feed="true"></fb:comments>
+	<fb:comments numposts="10" width="600" publish_feed="true"></fb:comments>
 </div> <!-- facebook -->
