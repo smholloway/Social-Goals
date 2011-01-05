@@ -1,20 +1,25 @@
 <% unless task.nil? %>
 <div id="goal_<%= @goal.id %>_task_<%= task.id %>" class="<%= cycle('_odd', '_even') %>">
+	<% if @goal.edit_authorized(current_user) %>	
 	<div class="task_delete">
 		<%= link_to 'x', goal_task_path(@goal, task), :confirm => 'Really delete this task?', 
 				:method => :delete, :remote => true %>
 	</div> <!-- task_delete -->
+	<% end %>
 
 	<div class="task_name">
-		<%= link_to task.name, goal_task_path(@goal, task) %>
+		<% if @goal.edit_authorized(current_user) %>
+			<%= link_to task.name, goal_task_path(@goal, task) %>
+		<% else %>
+			<%= task.name %>
+		<% end %>
 	</div> <!-- task_name -->
 
-	<div class="task_edit" style="display:none">
-		<%= link_to '>', edit_goal_task_path(@goal, task) %>
-	</div> <!-- task_edit -->
-
-  <div class="task-description">
-		(<%= task.percent_complete %>%) <%= task.description %>
+  <div class="task_description">
+		<% if @goal.edit_authorized(current_user) %>
+			<span class="italic">(<%= task.percent_complete %>%)</span>
+		<% end %>
+		<%= task.description %>
 	</div>
 </div> <!-- goal_<%= @goal.id %>_task_<%= task.id %> -->
 <% end %>

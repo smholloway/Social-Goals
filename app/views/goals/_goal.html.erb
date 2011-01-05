@@ -1,9 +1,11 @@
 <div id="goal_<%= goal.id %>" class="<%= cycle('_odd', '_even') %>">
 
+<% if goal.edit_authorized(current_user) %>
 	<div class="goal_delete">
 		<%= link_to 'x', goal, :confirm => 'Really delete this goal?', 
 				:method => :delete, :remote => true %>
 	</div> <!-- goal_delete -->
+<% end %>
 
 	<div class="goal_name">
 		<%= link_to truncate(strip_tags(goal.name), 
