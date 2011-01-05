@@ -2,7 +2,9 @@
 <ul>
   Search results:
   <% @search_result_goals.each do |search_goal| %>
-  <li><%= link_to search_goal.name %></li>
+  <li><%= link_to search_goal.name, search_goal %></li>
   <% end %>
 </ul>
+<%= will_paginate @search_result_goals %>
+<%= page_entries_info @search_result_goals %>
 <% end %>
