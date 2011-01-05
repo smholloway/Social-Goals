@@ -1,5 +1,5 @@
-Here is what <b><%= @user.name %></b> is up to:
+Here is what <span class="italic"><%= @user.name %></span> is up to:
 
 <div id="goals_list">
-	<%= render @goals %>
+	<%= render :partial => 'home/goal', :collection => @goals %>
 </div> <!-- goals_list -->
