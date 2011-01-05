@@ -6,3 +6,5 @@ AchieveAnything::Application.initialize!
 
 # Initialize oauth
 #config.gem 'oauth'
+
+require "will_paginate"

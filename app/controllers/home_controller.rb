@@ -4,8 +4,9 @@ class HomeController < ApplicationController
   end
   
   def search
+    page = params[:page] || 1
     search_condition = "%" + params[:search] + "%"
-    @search_result_goals = Goal.find(:all, :conditions => ['name LIKE ? and public = ?', search_condition, true])
+    @search_result_goals = Goal.paginate :page => page, :order => 'name', :conditions => ['name LIKE ? and public = ?', search_condition, true], :per_page => 10
   end
   
 end
