@@ -14,6 +14,9 @@
 	<%= link_to 'Edit', edit_goal_path(@goal) %> |
 <% end %>
 <%= link_to 'Back', goals_path %>
+<% if @goal.edit_authorized(current_user) %>
+ | <%= link_to "Share on Facebook",  "http://www.facebook.com/sharer.php?u=#{request.url}&t=I just created a new goal using Whichado.com called: #{@goal.name}. Check it out!" %>
+<% end %>
 </div>
 
 <br/>
