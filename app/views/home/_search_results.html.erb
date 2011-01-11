@@ -2,7 +2,8 @@
 <h1>Search results:</h1>
 <ul>
   <% @search_result_goals.each do |search_goal| %>
-  <li><%= link_to search_goal.name, search_goal %></li>
+  <li><%= link_to search_goal.name, search_goal %> by 
+			<%= link_to search_goal.user.name, '/'+search_goal.user.name %></li>
   <% end %>
 </ul>
 <%= will_paginate @search_result_goals %>
