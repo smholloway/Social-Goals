@@ -1,5 +1,5 @@
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Helvetica, 'Lucinda Grande', Arial, sans-serif;
 	font-size: 14px;
 	line-height: 130%;
   background: #FFFFFF;
@@ -44,10 +44,9 @@ a {
 	float: left;
 	margin-left: 15px;
 	min-width: 50px;
-	font-size: 30px;
+	font-size: 36px;
 	line-height: 50px;
 	font-variant: small-caps;
-	text-transform:lowercase;	
 	-webkit-font-smoothing: antialiased;
 	text-shadow: rgba(0, 0, 0, 0.246094) -1px -1px 0px;
 }
@@ -64,19 +63,62 @@ a {
 	text-shadow: rgba(0, 0, 0, 0.246094) 2px 2px 2px;
 }
 #top_bar_links {
+	padding: 1px;
 	margin-top: 10px;
 	margin-right: 10px;
 	float: right;
 	height: 30px;
+	line-height: 30px;
 	min-width: 30px;
 	text-align: center;
-	background: -moz-linear-gradient(top, #EEE, #FFF);
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFF), to(#EEE));
+	background: #EEE -moz-linear-gradient(top, #FFF, #EEE);
+	background: #EEE -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFF), to(#EEE));
 	text-shadow: rgba(255, 255, 255, 0.246094) -1px -1px 0px;
 	border: 1px solid #EEE;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 	border-radius: 2px;
+	vertical-align: middle;
+}
+#top_bar_links a {
+	margin: auto 5px;
+}
+#top_bar_search {
+	margin-left: 10px;
+	height: 50px;
+	line-height: 50px;
+}
+#top_bar_search_form {
+}
+#search_field {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border: 1px solid #CCCCCC;
+	line-height: 14px;
+	height: 24px;
+	margin: 0px;
+	padding: 2px 4px 3px;
+	width: 250px;
+	vertical-align: middle;	
+}
+#search_button {
+	background: #F6F6F6 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFF), to(#EEE));
+	background: #EEE -moz-linear-gradient(top, #FFF, #EEE);
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFF), to(#EEE));
+	border: 1px solid #CCCCCC;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	color: #286DA3;
+	cursor: pointer;
+	height: 24px;
+	overflow: visible;
+	padding: 0px 0.5em;
+	vertical-align: middle;
+	white-space: nowrap;
+	font-size: 13px;
+	margin-left: -6px;
 }
 .link_button {
 	float: left;

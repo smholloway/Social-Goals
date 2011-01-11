@@ -1,11 +1,17 @@
 <% title "Home" %>
 <div id="home">
-	<h1>Welcome!</h1>
-	<p>We want to help you succeed with an unobtrusive system that keeps you motivated and organized. We hope you'll like it.</p>
-	<br>
-	<div id="search">
-	    <%= render :partial => 'home/search' %>
+	<h1>Howdy <%= user_signed_in? ? current_user.name : 'stranger' %>!</h1>
+	<div>
+		<div>We want to help you succeed with a simple system that keeps you motivated and organized. We hope you'll like it. 
+		</div>
+		<br/>
+		<div>To start, create an account then input your goals and the steps to achieve the goal. Our search feature allows you to find users with similar goals so you can discuss how to succeed, offer support, and maybe even find a better way.
+		</div>
+		<br/>
+		<div><%= link_to "Whichado", root_path %> is still in its infancy. If you have feedback or suggestions, please share!
+		</div>
 	</div>
+	<br>
 	<br>
 	<div id="recent_activity">
 		<h1>Recent Activity</h1>

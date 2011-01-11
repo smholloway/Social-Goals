@@ -11,32 +11,31 @@
 </head>
 
 <body>
+	<noscript>Please enable JavaScript</noscript>
 	<div id="page">
     <div id="top_bar">
 			<div id="top_bar_container">
 				<div id="top_bar_logo">
 					<%= link_to "Whichado", root_path, :class => "logo" %>
 				</div> <!-- top_bar_logo -->
+				<div id="top_bar_search" style="" class="link_button">
+					<div id="top_bar_search_form" style="display:all">
+					<% form_tag '/home/search', :method => 'get' do %>
+					    <%= text_field_tag :search, params[:search], :id => 'search_field' %>
+					    <%= submit_tag "Search Goals", :id => "search_button", :name => nil %>
+					<% end %>
+					</div> <!-- top_bar_search_form -->
+				</div> <!-- top_bar_search -->
 				<div id="top_bar_links">
 					<% if user_signed_in? %>
-						<div id="top_bar_username" class="link_button">
-							<%= link_to current_user.name, edit_user_registration_path %>
-						</div> <!-- top_bar_username -->
+						<%= link_to current_user.name, edit_user_registration_path %> | 
 					<% end %>
-					<div id="top_bar_home" class="link_button">
-						<%= link_to 'Home', root_path %>
-					</div> <!-- top_bar_home -->
-					<div id="top_bar_goals" class="link_button">
-						<%= link_to 'Goals', goals_path %>
-					</div> <!-- top_bar_goals -->
+					<%= link_to 'Home', root_path %> | 
+					<%= link_to 'My Goals', goals_path %> | 
 					<% if user_signed_in? %>
-						<div id="top_bar_signout" class="link_button">
 					    <%= link_to "Sign out", destroy_user_session_path %>
-						</div> <!-- user_signout -->
 					<% else %>
-						<div id="top_bar_login" class="link_button">
 					    <%= link_to "Sign in", new_user_session_path %>
-						</div> <!-- top_bar_login -->
 					<% end %>
 		    </div> <!-- top_bar_links -->
 			</div> <!-- top_bar_container -->
