@@ -5,8 +5,12 @@ class HomeController < ApplicationController
   
   def search
     page = params[:page] || 1
-    search_condition = "%" + params[:search] + "%"
-    @search_result_goals = Goal.paginate :page => page, :order => 'name', :conditions => ['name LIKE ? and public = ?', search_condition, true], :per_page => 10
+    if params[:search] && !params[:search].empty?
+      search_condition = "%" + params[:search].upcase + "%"
+      @search_result_goals = Goal.paginate :page => page, :order => 'name', :conditions => ['UPPER(name) LIKE ? and public = ?', search_condition, true], :per_page => 10
+    else
+      @search_result_goals = nil
+    end
   end
   
 end
