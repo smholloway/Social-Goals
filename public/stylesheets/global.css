@@ -56,10 +56,10 @@ a {
 #top_bar_logo a {
 	text-decoration: none;
 	outline: none;
-	color: #000000;
+	color: #333;
 }
 #top_bar_logo a:hover {
-	color: #333333;
+	color: #286DA3;
 	text-shadow: rgba(0, 0, 0, 0.246094) 2px 2px 2px;
 }
 #top_bar_links {
@@ -162,7 +162,6 @@ a {
 	-moz-border-radius: 5px;
 	border-bottom-radius: 5px;
 	border-bottom-radius: 5px;
-	text-shadow: rgba(0, 0, 0, 0.246094) -1px -1px 0px;
 	border: 1px solid #E8E8E8;
 	-webkit-box-shadow: #333 0px 0px 5px;
 	-moz-box-shadow: #333 0px 0px 5px;
@@ -183,15 +182,16 @@ a {
 	-moz-border-radius-topright: 5px;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
+	text-shadow: rgba(0, 0, 0, 0.246094) -1px -1px 0px;
 }
 #banner_bottom {
 	width: 900px;
 	margin: -1px auto;
 	background: #E8E8E8;
-	color: #CC0000;
+	color: #333;
 	height: 40px;
 	line-height: 40px;
-	font-size: 18px;
+	font-size: 16px;
 	text-align: right;
 	-webkit-border-bottom-left-radius: 5px;
 	-webkit-border-bottom-right-radius: 5px;
@@ -480,7 +480,8 @@ textarea.styled_text_area_3_400 {
 
 #noscript {
 	color: red;
-	font-size: 140%;
+	font-size: 130%;
+	text-align: center;
 }
 .italic {
 	font-style:italic;
