@@ -1,4 +1,8 @@
 AchieveAnything::Application.routes.draw do
+  get "home/security"
+
+  get "home/about"
+
   root :to => "home#index"
   
   resources :achievement_types do

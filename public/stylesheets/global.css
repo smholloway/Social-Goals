@@ -217,21 +217,24 @@ a {
 }
 
 #footer {
-  margin: 10px auto 10px;
-  position: relative;
-  padding: 10px;
-  min-width: 880px;
-	width: 880px;
-  border-radius: 5px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  display: block;
-  min-height: 50px;
-	font-size: 13px;
-	background: #E8E8E8;
-	-webkit-box-shadow: #333 0px 0px 5px;
-	-moz-box-shadow: #333 0px 0px 5px;
-	-box-shadow: #333 0px 0px 5px;
+	position: relative;
+	bottom: -1px;
+	left: auto;
+	width: 100%;
+	display: block;
+	min-height: 50px;
+	line-height: 50px;
+	font-size: 12sepx;
+	border-top: 1px groove #FFF;
+	padding: 0px 5px;
+	text-align: center;
+}
+#footer a {
+	color: #286DA3;
+	text-decoration: none;
+}
+#footer a:hover {
+	text-decoration: underline;
 }
 
 #home {
