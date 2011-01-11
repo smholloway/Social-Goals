@@ -2,7 +2,7 @@
 <div id="home">
 	<h1>Howdy <%= user_signed_in? ? current_user.name : 'stranger' %>!</h1>
 	<div>
-		<div>We want to help you succeed with a simple system that keeps you motivated and organized. We hope you'll like it. 
+		<div>Research has shown that having and sharing goals leads to success. We want to help you succeed with an easy-to-use goal-tracking system that keeps you motivated and organized: <%= link_to "Whichado", root_path %>. We hope you'll like it. 
 		</div>
 		<br/>
 		<div>To start, create an account then input your goals and the steps to achieve the goal. Our search feature allows you to find users with similar goals so you can discuss how to succeed, offer support, and maybe even find a better way.
@@ -16,7 +16,7 @@
 	<div id="recent_activity">
 		<h1>Recent Activity</h1>
 		<% if @goals.empty? %>
-			No recent activity
+			Be the first to share your goals!
 		<% else %>
 			<%= render :partial => "home/goal", :collection => @goals %>
 		<% end %>

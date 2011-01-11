@@ -478,6 +478,10 @@ textarea.styled_text_area_3_400 {
 	height: 48px;
 }
 
+#noscript {
+	color: red;
+	font-size: 140%;
+}
 .italic {
 	font-style:italic;
 }
