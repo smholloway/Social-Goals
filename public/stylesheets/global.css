@@ -1,4 +1,4 @@
-body {
+html, body {
   font-family: Helvetica, 'Lucinda Grande', Arial, sans-serif;
 	font-size: 14px;
 	line-height: 130%;
@@ -14,7 +14,10 @@ a {
 }
 
 #page {
-  min-height: 600px;
+	margin: 0 auto -32px;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
 }
 
 #content {
@@ -83,6 +86,9 @@ a {
 #top_bar_links a {
 	margin: auto 5px;
 }
+#top_bar_links a:hover {
+	text-decoration: underline;
+}
 #top_bar_search {
 	margin-left: 10px;
 	height: 50px;
@@ -147,7 +153,6 @@ a {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   display: block;
-  min-height: 470px;
 	font-size: 14px;
 }
 
@@ -221,10 +226,11 @@ a {
 	bottom: -1px;
 	left: auto;
 	display: block;
-	min-height: 50px;
-	line-height: 50px;
-	font-size: 12sepx;
+	height: 30px;
+	line-height: 30px;
+	font-size: 13px;
 	border-top: 1px groove #FFF;
+	background: #E8E8E8;
 	padding: 0px 5px;
 	text-align: center;
 }
@@ -484,6 +490,9 @@ textarea.styled_text_area_3_400 {
 	color: red;
 	font-size: 130%;
 	text-align: center;
+}
+.push {
+	height: 30px;
 }
 .italic {
 	font-style:italic;
