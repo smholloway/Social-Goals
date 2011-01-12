@@ -1,9 +1,5 @@
 AchieveAnything::Application.routes.draw do
-  get "home/security"
-
-  get "home/about"
-
-  root :to => "home#index"
+  root :to => "home#index" # define the root path
   
   resources :achievement_types do
     resources :levels
@@ -17,13 +13,15 @@ AchieveAnything::Application.routes.draw do
 
   devise_for :users
 
-  devise_for :admins
+  devise_for :admins # currently unused
 
   resources :users
 
   get "home/index"
   get "home/login"
   get "home/search"
+  get "home/security"
+  get "home/about"  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
