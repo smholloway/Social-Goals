@@ -32,6 +32,15 @@
 		}
 	});
 	
+	$('.fb_plus_minus').live('click', function(){
+		$(this).siblings('.fb_tasks_list').toggle();
+		/*if ($(this).text() == '+') {
+			$(this).replaceWith('-');
+		} else {
+			$(this).replaceWith('+');
+		}*/
+	});
+
 	$('#new_task_button').live('click', function(){
 		$('#new_task_button').toggle();
 		$('#new_task_container').toggle();

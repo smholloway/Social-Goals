@@ -518,3 +518,45 @@ textarea.styled_text_area_3_400 {
 	left: auto;
 	text-align: center;
 }
+.left {
+  float: left;
+  margin-right: 1px;
+}
+.right {
+  float: right;
+  margin-left: 1px;
+}
+.clear {
+  clear: both;
+}
+#fb_goals {
+  width: 244px;
+}
+#fb_goals_list_header {
+  background: #F2F2F2;
+  color: #000;
+  border-top: 1px solid #E2E2E2;
+  height: 13px;
+  line-height: 13px;
+  font-size: 11px;
+  font-family: 'lucinda-grande', verdana, tahoma, sans-serif;
+  padding: 4px 5px 5px;
+}
+#fb_goals_list {
+  background: #FFF;
+  color: #3B5998;
+  font-size: 11px;
+  font-family: 'lucinda-grande', verdana, tahoma, sans-serif;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.fb_goal {
+  margin-bottom: 4px;
+}
+.fb_tasks_list {
+  padding-left: 12px;
+  display: none;
+}
+.fb_plus_minus {
+  float: left;
+}
