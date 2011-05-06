@@ -38,7 +38,7 @@ AchieveAnything::Application.configure do
   # config.action_mailer.raise_delivery_errors = false
   
   # Devise email setup
-  config.action_mailer.default_url_options = { :host => 'www.whichado.com' }
+  config.action_mailer.default_url_options = { :host => 'social-goals.heroku.com' }
 
   # Enable threaded mode
   # config.threadsafe!

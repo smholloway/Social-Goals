@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Whichado - <%= yield(:title) || "Home" %></title>
+  <title>Social Goals - <%= yield(:title) || "Home" %></title>
   <%= stylesheet_link_tag :all %>
 	<%= javascript_include_tag "jquery.min.js" %>
 	<%= javascript_include_tag "jquery.rails.js" %>
@@ -15,7 +15,7 @@
     <div id="top_bar">
 			<div id="top_bar_container">
 				<div id="top_bar_logo">
-					<%= link_to "Whichado", root_path, :class => "logo" %>
+					<%= link_to "Social Goals", root_path, :class => "logo" %>
 				</div> <!-- top_bar_logo -->
 				<div id="top_bar_search" style="" class="link_button">
 					<div id="top_bar_search_form" style="display:all">
@@ -44,10 +44,10 @@
     <div id="site">
 			<div id="banner">
 				<div id="banner_top">
-					No matter what you do, Whichado
+					Social Goals
 				</div> <!-- banner_top -->
 				<div id="banner_bottom">
-					Goal tracking that helps you achieve anything &nbsp;
+					Get involved in your goals
 	    	</div> <!-- banner_bottom -->
 			</div> <!-- banner -->
 			<div id="notices">
@@ -68,7 +68,7 @@
   </div> <!-- page -->
 
 	<div id="footer">
-		&copy; <%= link_to "Whichado", root_path %> | 
+		&copy; <%= link_to "Social Goals", root_path %> | 
 		<%= link_to "About", home_about_path %> |
 		<%= link_to "Privacy", home_security_path %> |
 		<%= link_to "Feedback", 'http://www.google.com/moderator/#16/e=49eb1' %>
